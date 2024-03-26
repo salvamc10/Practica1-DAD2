@@ -23,16 +23,19 @@ public class InicializarContexto implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-         // TODO Auto-generated method stub
-    	
-    	System.out.println("Inicializando el contexto");
-    	
-    	Hashtable<String, User> users = new Hashtable<String, User>();
-    	
-    	users.put("1", new User("1", "admin"));
-    	
-    	sce.getServletContext().setAttribute("users", users);
-    	
+        // Método llamado al inicializarse el contexto del servlet
+
+        // Imprimir mensaje de inicialización del contexto
+        System.out.println("Inicializando el contexto");
+        
+        // Crear una Hashtable para almacenar usuarios (clave: id, valor: User)
+        Hashtable<String, User> users = new Hashtable<String, User>();
+        
+        // Agregar un usuario de ejemplo a la Hashtable
+        users.put("1", new User("1", "admin"));
+        
+        // Asignar la Hashtable de usuarios al contexto del servlet
+        sce.getServletContext().setAttribute("users", users);
     }
 
 	/**
