@@ -60,14 +60,14 @@
 </style>
 </head>
 <body>
-<form action="ServletInsertar" method="post">
+<form action="Control?idaccion=login" method="post">
 
   <!-- Título del formulario -->
   <h1>Iniciar Sesión</h1>
   
   <!-- Etiqueta y campo de entrada para el usuario -->
-  <label for="nombre">Usuario:</label>
-  <input type="text" id="nombre" name="nombre">
+  <label for="usuario">Usuario:</label>
+  <input type="text" id="usuario" name="usuario">
   <br>
   
   <!-- Etiqueta y campo de entrada para la contraseña -->
@@ -79,5 +79,10 @@
   <input type="submit" value="Login">
   
 </form>
+<%
+	if(request.getAttribute("LOGIN") != null){
+		out.println("Credenciales incorrectas");
+	}
+%>
 </body>
 </html>
