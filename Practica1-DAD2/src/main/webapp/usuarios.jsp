@@ -75,6 +75,38 @@
   tr:hover {
     background-color: #f2f2f2;
   }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .action-buttons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .edit-button {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .edit-button:hover {
+    background-color: #218838;
+  }
+
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .delete-button:hover {
+    background-color: #c82333;
+  }
 </style>
 </head>
 <body>
@@ -104,6 +136,7 @@
     <tr>
       <th>Usuario</th>
       <th>Contraseña</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -111,6 +144,10 @@
     <tr>
       <td><%= user.getUsuario() %></td>
       <td><%= user.getContrasena() %></td>
+      <td class="action-buttons">
+        <a href="Control?idaccion=BorrarUsuario&usuario=<%= user.getUsuario() %>" class="delete-button">Borrar</a>
+        <a href="Control?idaccion=EditarUsuario&user=<%= user.getUsuario() %>" class="edit-button">Editar</a>
+      </td>
     </tr>
     <% } %>
   </tbody>

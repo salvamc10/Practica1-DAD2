@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import edu.ucam.actions.Action;
+import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.Login;
 
@@ -38,6 +39,7 @@ public class Control extends HttpServlet {
             actions = new Hashtable<String, Action>();
             actions.put("login", new Login());
             actions.put("InsertarUsuario", new InsertarUsuario());
+            actions.put("BorrarUsuario", new BorrarUsuario());
         }
         
         super.init();
