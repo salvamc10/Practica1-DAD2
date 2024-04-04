@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +25,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    position: relative;
   }
 
   /* Estilos para el título del formulario */
@@ -57,10 +58,16 @@
   input[type="submit"]:hover {
     background-color: #0056b3;
   }
+
+  /* Estilos para el mensaje de credenciales incorrectas */
+  .error-message {
+    color: red;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
-<form action="Control?idaccion=login" method="post">
+<form action="Control?idaccion=Login" method="post">
 
   <!-- Título del formulario -->
   <h1>Iniciar Sesión</h1>
@@ -78,11 +85,17 @@
   <!-- Botón de submit -->
   <input type="submit" value="Login">
   
+  <!-- Mensaje de error -->
+  <%
+    // Verificamos si el atributo LOGIN está presente y mostramos el mensaje correspondiente
+    if (request.getAttribute("LOGIN") != null) {
+  %>
+    <p class="error-message">Credenciales incorrectas</p>
+  <%
+    }
+  %>
+  
 </form>
-<%
-	if(request.getAttribute("LOGIN") != null){
-		out.println("Credenciales incorrectas");
-	}
-%>
+
 </body>
 </html>

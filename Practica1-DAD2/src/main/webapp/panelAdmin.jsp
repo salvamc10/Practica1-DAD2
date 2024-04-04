@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Hashtable" %> 
+<%@ page import="edu.ucam.pojos.User" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +12,43 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Estilos del encabezado */
+    header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .user-info {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .logout-button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .logout-button:hover {
+        background-color: #c82333;
+        margin-right: 20px;
     }
     
     .panel {
         width: 300px;
-        margin: 100px auto;
+        margin: 20px auto;
         padding: 20px;
         background-color: #fff;
         border-radius: 10px;
@@ -51,6 +86,22 @@
 </style>
 </head>
 <body>
+
+<header>
+    <div class="user-info">
+        <%-- Obtener el nombre de usuario del primer usuario en la Hashtable --%>
+        <% Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
+           if(users != null && !users.isEmpty()) {
+               // Obtener el primer usuario de la Hashtable
+               String nombreUsuario = users.keySet().iterator().next();
+        %>
+        <span>Bienvenido, <%= nombreUsuario %></span>
+        <% } %>
+    </div>
+    <form action="Control?idaccion=Logout" method="post">
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+    </form>
+</header>
 
 <div class="panel">
     <h2>Seleccione una opción</h2>

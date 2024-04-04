@@ -12,6 +12,7 @@ import java.util.Hashtable;
 import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.InsertarUsuario;
+import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
 
 /**
@@ -37,7 +38,8 @@ public class Control extends HttpServlet {
     	// Si la Hashtable de acciones es nula, inicialízala y agrega acciones
         if (this.actions == null) {
             actions = new Hashtable<String, Action>();
-            actions.put("login", new Login());
+            actions.put("Login", new Login());
+            actions.put("Logout", new LogOut());
             actions.put("InsertarUsuario", new InsertarUsuario());
             actions.put("BorrarUsuario", new BorrarUsuario());
         }
@@ -54,10 +56,10 @@ public class Control extends HttpServlet {
         String accion = request.getParameter("idaccion");
         
         // Obtener la acción correspondiente según el parámetro "idaccion"
-        Action a = actions.get(accion);
+        Action action = actions.get(accion);
         
         // Ejecutar la acción y obtener la URL de la página resultante
-        jsp = a.doAction(request, response);
+        jsp = action.doAction(request, response);
         
         // Redirigir a la página correspondiente
         request.getRequestDispatcher(jsp).forward(request, response);
