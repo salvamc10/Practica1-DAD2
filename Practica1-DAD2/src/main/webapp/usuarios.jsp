@@ -1,5 +1,5 @@
-<%@ page import="java.util.Hashtable" %>
-<%@ page import="edu.ucam.pojos.User" %>
+<%@ page import="java.util.Hashtable" %> 
+<%@ page import="edu.ucam.pojos.User" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,32 +8,68 @@
 <meta charset="UTF-8">
 <title>CRUD de Usuarios</title>
 <style>
+  /* Estilos globales para el cuerpo de la página */
   body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 20; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+  
+  /* Estilos del encabezado */
+    header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+    }
 
+  .user-info {
+      margin-right: 20px;
+      margin-left: 20px;
+  }
+
+  .logout-button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 20px;
+  }
+
+  .logout-button:hover {
+      background-color: #c82333;
+  }
+    
+  /* Estilos para el formulario y la tabla */
   form, table {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-top: 60px; 
     width: 100%;
     max-width: 600px;
   }
 
+  /* Estilos para el título */
   h1 {
     text-align: center;
     color: #333;
+    margin-top: 40px; 
   }
 
+  /* Estilos para los campos de texto, contraseña y botones */
   input[type="text"],
   input[type="password"],
   input[type="submit"] {
@@ -56,6 +92,7 @@
     background-color: #0056b3;
   }
 
+  /* Estilos para la tabla */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -76,6 +113,7 @@
     background-color: #f2f2f2;
   }
 
+  /* Estilos para los botones de acción */
   .action-buttons {
     display: flex;
     align-items: center;
@@ -111,8 +149,31 @@
 </head>
 <body>
 
+<header>
+    <div class="user-info">
+        <%-- Obtener el nombre de usuario del primer usuario en la Hashtable --%>
+        <% Hashtable<String, User> usuarios = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
+           if(usuarios != null && !usuarios.isEmpty()) {
+               // Obtener el primer usuario de la Hashtable
+               String nombreUsuario = usuarios.keySet().iterator().next();
+        %>
+        <span>Bienvenido, <%= nombreUsuario %></span>
+        <% } %>
+    </div>
+    <button onclick="logout()" class="logout-button">Cerrar sesión</button>
+</header>
+
+<script>
+    function logout() {
+        // Aquí puedes realizar cualquier acción de cierre de sesión que necesites, como redireccionar a la página de inicio de sesión.
+        window.location.href = "Control?idaccion=Logout";
+    }
+</script>
+
+
 <h1>CRUD de Usuarios</h1>
 
+<!-- Formulario para insertar un nuevo usuario -->
 <form action="Control?idaccion=InsertarUsuario" method="post">
   <h2>Insertar un nuevo usuario</h2>
   <label for="usuario">Usuario:</label>
@@ -130,6 +191,7 @@
     Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
 %>
 
+<!-- Tabla de listado de usuarios -->
 <h2>Listado de usuarios</h2>
 <table>
   <thead>
@@ -145,7 +207,9 @@
       <td><%= user.getUsuario() %></td>
       <td><%= user.getContrasena() %></td>
       <td class="action-buttons">
+      	<!-- Botón para borrar un usuario -->
         <a href="Control?idaccion=BorrarUsuario&usuario=<%= user.getUsuario() %>" class="delete-button">Borrar</a>
+        <!-- Botón para editar un usuario -->
         <a href="Control?idaccion=EditarUsuario&user=<%= user.getUsuario() %>" class="edit-button">Editar</a>
       </td>
     </tr>
@@ -154,6 +218,7 @@
 </table>
 
 <% } else { %>
+<!-- Mensaje si no hay usuarios registrados -->
 <p>No hay usuarios registrados.</p>
 <% } %>
 

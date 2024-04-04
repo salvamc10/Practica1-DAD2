@@ -38,13 +38,13 @@ public class Login extends Action{
 		        
 		    } else {
 		    	// Si la contraseña no coincide, mostrar un mensaje de error y redirigir a la página "index.jsp"
-		        request.setAttribute("MSG_ERROR", "Usuario/clave incorrectos");
+		    	request.setAttribute("LOGIN", true);
 		        return "index.jsp";
 		    }
 		    
 		} else {
 		    // Si no se encontró un usuario con el nombre proporcionado, mostrar un mensaje de error y redirigir a la página "index.jsp"
-		    request.setAttribute("MSG_ERROR", "Usuario/clave incorrectos");
+			request.setAttribute("LOGIN", true);
 		    return "index.jsp";
 		}
 	}
