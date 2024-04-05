@@ -165,7 +165,6 @@
 
 <script>
     function logout() {
-        // Aquí puedes realizar cualquier acción de cierre de sesión que necesites, como redireccionar a la página de inicio de sesión.
         window.location.href = "Control?idaccion=Logout";
     }
 </script>
@@ -177,10 +176,10 @@
 <form action="Control?idaccion=InsertarUsuario" method="post">
   <h2>Insertar un nuevo usuario</h2>
   <label for="usuario">Usuario:</label>
-  <input type="text" id="usuario" name="usuario">
+  <input type="text" id="usuario" name="usuario" required>
   <br>
   <label for="contrasena">Contraseña:</label>
-  <input type="text" id="contrasena" name="contrasena">
+  <input type="text" id="contrasena" name="contrasena" required>
   <br>
   <input type="submit" value="Insertar usuario">
 </form>
@@ -210,7 +209,7 @@
       	<!-- Botón para borrar un usuario -->
         <a href="Control?idaccion=BorrarUsuario&usuario=<%= user.getUsuario() %>" class="delete-button">Borrar</a>
         <!-- Botón para editar un usuario -->
-        <a href="Control?idaccion=EditarUsuario&user=<%= user.getUsuario() %>" class="edit-button">Editar</a>
+        <a href="Control?idaccion=ModUser&usuario=<%= user.getUsuario() %>" class="edit-button">Editar</a>
       </td>
     </tr>
     <% } %>
