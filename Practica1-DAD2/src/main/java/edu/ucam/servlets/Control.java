@@ -11,9 +11,11 @@ import java.util.Hashtable;
 
 import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarUsuario;
+import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
+import edu.ucam.actions.ModUser;
 
 /**
  * Servlet implementation class Control
@@ -42,6 +44,8 @@ public class Control extends HttpServlet {
             actions.put("Logout", new LogOut());
             actions.put("InsertarUsuario", new InsertarUsuario());
             actions.put("BorrarUsuario", new BorrarUsuario());
+            actions.put("EditarUsuario", new EditarUsuario());
+            actions.put("ModUser", new ModUser());
         }
         
         super.init();
