@@ -1,0 +1,15 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>Tag Administradores</short-name>
+	<uri>mistags</uri>
+	<desciption>Tag para mostrar a los usuarios que son administradores</desciption>
+	<tag>
+		<name>listar</name>
+		<tag-class>edu.ucam.tags.ListarAdmin</tag-class>
+		<attribute>
+			<name>tipo</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>
