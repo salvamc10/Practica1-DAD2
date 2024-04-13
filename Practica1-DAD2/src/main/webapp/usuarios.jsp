@@ -1,5 +1,6 @@
 <%@ page import="java.util.Hashtable" %> 
 <%@ page import="edu.ucam.pojos.User" %> 
+<%@ taglib uri="mistags" prefix="listarAdmin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -145,6 +146,45 @@
   .delete-button:hover {
     background-color: #c82333;
   }
+  
+  /* Estilos para las secciones de administración */
+.admin-section {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilos para mejorar la visualización del componente listarAdmin */
+.listarAdmin {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
 </style>
 </head>
 <body>
@@ -220,6 +260,18 @@
 <!-- Mensaje si no hay usuarios registrados -->
 <p>No hay usuarios registrados.</p>
 <% } %>
+
+<!-- Sección para listar administradores -->
+<section class="admin-section">
+    <h2 class="section-title">Listar Administradores</h2>
+    <table class="admin-table">
+      <tbody>
+      	<tr>
+      		<td><listarAdmin:listar tipo="admin"/></td>
+      	</tr>
+      </tbody>
+    </table>
+</section>
 
 </body>
 </html>
