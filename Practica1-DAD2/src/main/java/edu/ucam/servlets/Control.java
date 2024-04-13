@@ -10,11 +10,15 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import edu.ucam.actions.Action;
+import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarUsuario;
+import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarUsuario;
+import edu.ucam.actions.InsertarAsignatura;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
+import edu.ucam.actions.ModAsignatura;
 import edu.ucam.actions.ModUser;
 
 /**
@@ -46,6 +50,10 @@ public class Control extends HttpServlet {
             actions.put("BorrarUsuario", new BorrarUsuario());
             actions.put("EditarUsuario", new EditarUsuario());
             actions.put("ModUser", new ModUser());
+            actions.put("InsertarAsignatura", new InsertarAsignatura());
+            actions.put("BorrarAsignatura", new BorrarAsignatura());
+            actions.put("EditarAsignatura", new EditarAsignatura());
+            actions.put("ModAsignatura", new ModAsignatura());
         }
         
         super.init();
