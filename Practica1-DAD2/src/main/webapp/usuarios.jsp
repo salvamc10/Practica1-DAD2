@@ -185,7 +185,10 @@
     color: #333;
     font-family: Arial, sans-serif;
 }
+<<<<<<< HEAD
   
+=======
+>>>>>>> ListarEtiqueta
 </style>
 </head>
 <body>
@@ -273,5 +276,9 @@
       </tbody>
     </table>
 </section>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ListarEtiqueta
 </body>
 </html>

@@ -1,11 +1,19 @@
 package edu.ucam.tags;
 
+<<<<<<< HEAD
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.tagext.BodyTagSupport;
 
 import java.util.Hashtable;
 
 import edu.ucam.pojos.User;
+=======
+import java.util.Hashtable;
+
+import edu.ucam.pojos.User;
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.tagext.BodyTagSupport;
+>>>>>>> ListarEtiqueta
 
 public class ListarAdmin extends BodyTagSupport{
 	
@@ -33,7 +41,11 @@ public class ListarAdmin extends BodyTagSupport{
 						}
 					}		
 				}else {
+<<<<<<< HEAD
 					pageContext.getOut().println("Atributo tipo vacío");
+=======
+					pageContext.getOut().println("Atributo usuario vacío");
+>>>>>>> ListarEtiqueta
 				}
 				
 			} catch (Exception e) {
