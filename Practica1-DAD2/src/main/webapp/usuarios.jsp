@@ -191,23 +191,12 @@
 
 <header>
     <div class="user-info">
-        <%-- Obtener el nombre de usuario del primer usuario en la Hashtable --%>
-        <% Hashtable<String, User> usuarios = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
-           if(usuarios != null && !usuarios.isEmpty()) {
-               // Obtener el primer usuario de la Hashtable
-               String nombreUsuario = usuarios.keySet().iterator().next();
-        %>
-        <span>Bienvenido, <%= nombreUsuario %></span>
-        <% } %>
+        <span>Bienvenido</span>
     </div>
-    <button onclick="logout()" class="logout-button">Cerrar sesión</button>
+    <form action="Control?idaccion=Logout" method="post">
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+    </form>
 </header>
-
-<script>
-    function logout() {
-        window.location.href = "Control?idaccion=Logout";
-    }
-</script>
 
 
 <h1>CRUD de Usuarios</h1>
