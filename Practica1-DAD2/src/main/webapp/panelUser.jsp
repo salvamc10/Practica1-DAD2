@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Panel de opciones</title>
+<title>Panel de Opciones</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <style>
     body {
@@ -13,26 +13,21 @@
         padding: 0;
     }
     
-    /* Estilos del encabezado */
     header {
         background-color: #007bff;
-        color: #fff;
-        padding: 10px;
+        color: white;
+        padding: 15px 20px;
         display: flex;
-        justify-content: space-between; 
-        align-items: center; 
-    }
-
-    .user-info {
-        margin-right: 20px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .logout-button {
         background-color: #dc3545;
-        color: #fff;
+        color: white;
         border: none;
         border-radius: 5px;
-        padding: 8px 15px;
+        padding: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
@@ -40,42 +35,45 @@
     .logout-button:hover {
         background-color: #c82333;
     }
-    
+
     .panel {
-        width: 300px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        text-align: center; /* Centramos el contenido del panel */
     }
-    
+
     .panel h2 {
-        margin-bottom: 20px;
         color: #333;
+        margin-bottom: 20px;
     }
-    
+
     .panel ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
     }
-    
+
     .panel li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
-    
-    .panel a {
-        display: block;
-        padding: 10px;
+
+    .action-button {
+        padding: 12px;
         background-color: #007bff;
-        color: #fff;
+        color: white;
         text-decoration: none;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+        text-align: center;
+        font-size: 16px;
+        width: 100%; /* Aseguramos que el botón tome el 100% del ancho disponible */
     }
-    
-    .panel a:hover {
+
+    .action-button:hover {
         background-color: #0056b3;
     }
 </style>
@@ -83,11 +81,9 @@
 <body>
 
 <header>
-    <div class="user-info">
-        <span>Bienvenido</span>
-    </div>
+    <div>Bienvenido</div>
     <form action="Control" method="post">
-    	<input type="hidden" name="idaccion" value="Logout">
+        <input type="hidden" name="idaccion" value="Logout">
         <button type="submit" class="logout-button">Cerrar sesión</button>
     </form>
 </header>
@@ -96,11 +92,11 @@
     <h2>Seleccione una opción</h2>
     <ul>
         <li>
-        	<form action="Control" method="post">
-        		<input type="hidden" name="idaccion" value="GestionAsignaturas">
-        		<button type="submit" class="edit-button">CRUD de Asignaturas</button>
-    		</form>
-		</li>
+            <form action="Control" method="post">
+                <input type="hidden" name="idaccion" value="GestionAsignaturas">
+                <button type="submit" class="action-button">CRUD de Asignaturas</button>
+            </form>
+        </li>
     </ul>
 </div>
 

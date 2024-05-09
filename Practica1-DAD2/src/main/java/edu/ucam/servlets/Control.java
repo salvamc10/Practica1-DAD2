@@ -77,7 +77,7 @@ public class Control extends HttpServlet {
         	// Redirigir a la página correspondiente
             request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else{
-			
+		
 			// Obtener la acción correspondiente según el parámetro "idaccion"
 	        Action action = actions.get(idaccion);
 	        
