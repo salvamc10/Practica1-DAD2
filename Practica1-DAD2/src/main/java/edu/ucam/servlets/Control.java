@@ -72,25 +72,12 @@ public class Control extends HttpServlet {
 		String jsp;
         String idaccion = request.getParameter("idaccion");
         
-<<<<<<< Updated upstream
-        if (idaccion == null)
-
-		{
-        	// Redirigir a la página correspondiente
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-		}
-
-		else
-
-		{
-=======
-        if (idaccion == null) {
+        if (idaccion == null){
         	
         	// Redirigir a la página correspondiente
             request.getRequestDispatcher("index.jsp").forward(request, response);
-		} else {
-			
->>>>>>> Stashed changes
+		} else{
+		
 			// Obtener la acción correspondiente según el parámetro "idaccion"
 	        Action action = actions.get(idaccion);
 	        
