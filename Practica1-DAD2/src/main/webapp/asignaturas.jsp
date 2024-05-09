@@ -9,136 +9,147 @@
 <title>CRUD de Asignaturas</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logout-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .logout-button:hover {
-    background-color: #c82333;
-  }
-  
-  .panel {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6; /* Para mayor legibilidad */
+    }
+    
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .panel h1 {
-    text-align: center;
-    color: #333;
-  }
+    .logout-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-  .input-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
+    .logout-button:hover {
+        background-color: #c82333;
+    }
 
-  .input-field label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
+    .content {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
 
-  .input-field input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
+    .content h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
 
-  .submit-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+    .form-section {
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
+    .form-section h2 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+    .input-group {
+        margin-bottom: 20px;
+    }
 
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
+    .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 
-  th {
-    background-color: #007bff;
-    color: white;
-  }
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-  tr:hover {
-    background-color: #f2f2f2;
-  }
+    .submit-button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-  .action-buttons {
-    display: flex;
-    gap: 10px;
-  }
+    .submit-button:hover {
+        background-color: #0056b3;
+    }
 
-  .action-buttons button {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
-  .edit-button {
-    background-color: #28a745;
-  }
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
 
-  .edit-button:hover {
-    background-color: #218838;
-  }
+    th {
+        background-color: #007bff;
+        color: white;
+    }
 
-  .delete-button {
-    background-color: #dc3545;
-  }
+    tr:hover {
+        background-color: #f2f2f2;
+    }
 
-  .delete-button:hover {
-    background-color: #c82333;
-  }
+    .action-buttons {
+        display: flex;
+        gap: 20px;
+    }
 
-  .no-asignaturas {
-    text-align: center;
-    color: #555;
-    margin-top: 20px;
-  }
+    .edit-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .edit-button:hover {
+        background-color: #218838;
+    }
+
+    .delete-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }
 </style>
 </head>
 <body>
@@ -151,70 +162,72 @@
   </form>
 </header>
 
-<div class="panel">
-  <h1>CRUD de Asignaturas</h1>
-  
-  <!-- Formulario para insertar una nueva asignatura -->
-  <form action="Control" method="post">
-    <input type="hidden" name="idaccion" value="InsertarAsignatura">
-    <h2>Insertar nueva asignatura</h2>
-    <div class="input-field">
-      <label for="id">ID:</label>
-      <input type="text" id="id" name="id" required>
+<div class="content">
+    <h1>CRUD de Asignaturas</h1>
+
+    <!-- Formulario para insertar una nueva asignatura -->
+    <div class="form-section">
+        <h2>Insertar nueva asignatura</h2>
+        <form action="Control" method="post">
+            <input type="hidden" name="idaccion" value="InsertarAsignatura">
+            <div class="input-group">
+                <label for="id">ID:</label>
+      			<input type="text" id="id" name="id" required>
+            </div>
+            <div class="input-group">
+                <label for="nombre">Nombre:</label>
+      			<input type="text" id="nombre" name="nombre" required>
+            </div>
+            <button type="submit" class="submit-button">Insertar asignatura</button>
+        </form>
     </div>
-    <div class="input-field">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-    </div>
-    <button type="submit" class="submit-button">Insertar asignatura</button>
-  </form>
-  
-  <!-- Tabla de listado de asignaturas -->
-  <%
+
+    <%
     if (request.getServletContext().getAttribute("asignaturas") != null) {
-      Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
-  %>
-  <h2>Listado de asignaturas</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% 
-      for (Asignatura asignatura : asignaturas.values()) { 
-      %>
-      <tr>
-        <td><%= asignatura.getId() %></td>
-        <td><%= asignatura.getNombre() %></td>
-        <td class="action-buttons">
-          <form action="Control" method="post">
-            <input type="hidden" name="idaccion" value="BorrarAsignatura">
-            <input type="hidden" name="id" value="<%= asignatura.getId() %>">
-            <button type="submit" class="delete-button">Borrar</button>
-          </form>
-          <form action="Control" method="post">
-            <input type="hidden" name="idaccion" value="ModAsignatura">
-            <input type="hidden" name="id" value="<%= asignatura.getId() %>">
-            <button type="submit" class="edit-button">Editar</button>
-          </form>
-        </td>
-      </tr>
-      <% 
-      } 
-      %>
-    </tbody>
-  </table>
-  <% 
-  } else { 
-  %>
-  <div class="no-asignaturas">No hay asignaturas registradas.</div>
-  <% 
-  } 
-  %>
+        Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
+    %>
+    <!-- Tabla de listado de usuarios -->
+    <h2>Listado de asignaturas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% 
+            for (Asignatura asignatura : asignaturas.values()) {
+            %>
+            <tr>
+                <td><%= asignatura.getId() %></td>
+                <td><%= asignatura.getNombre() %></td>
+                <td class="action-buttons">
+                    <form action="Control" method="post">
+                        <input type="hidden" name="idaccion" value="BorrarAsignatura">
+                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <button type="submit" class="delete-button">Borrar</button>
+                    </form>
+                    <form action="Control" method="post">
+                        <input type="hidden" name="idaccion" value="ModAsignatura">
+                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <button type="submit" class="edit-button">Editar</button>
+                    </form>
+                </td>
+            </tr>
+            <% 
+            }
+            %>
+        </tbody>
+    </table>
+    <% 
+    } else { 
+    %>
+    <p>No hay asignaturas registrados.</p>
+    <% 
+    } 
+    %>
 </div>
 
 </body>

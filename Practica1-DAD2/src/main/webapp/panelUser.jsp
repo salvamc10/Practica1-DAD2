@@ -43,7 +43,7 @@
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        text-align: center; /* Centramos el contenido del panel */
+        text-align: center; 
     }
 
     .panel h2 {
@@ -66,11 +66,11 @@
         background-color: #007bff;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        border: none;
+        border-radius: 10px;
         text-align: center;
         font-size: 16px;
-        width: 100%; /* Aseguramos que el botón tome el 100% del ancho disponible */
+        width: 100%;
     }
 
     .action-button:hover {
