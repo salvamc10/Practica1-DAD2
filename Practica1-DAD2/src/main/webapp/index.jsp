@@ -67,7 +67,8 @@
 </style>
 </head>
 <body>
-<form action="Control?idaccion=Login" method="post">
+<form action="Control" method="post">
+  <input type="hidden" name="idaccion" value="Login">
 
   <!-- Título del formulario -->
   <h1>Iniciar Sesión</h1>

@@ -89,16 +89,10 @@
 
 <header>
     <div class="user-info">
-        <%-- Obtener el nombre de usuario del primer usuario en la Hashtable --%>
-        <% Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
-           if(users != null && !users.isEmpty()) {
-               // Obtener el primer usuario de la Hashtable
-               String nombreUsuario = users.keySet().iterator().next();
-        %>
-        <span>Bienvenido, <%= nombreUsuario %></span>
-        <% } %>
+        <span>Bienvenido</span>
     </div>
-    <form action="Control?idaccion=Logout" method="post">
+    <form action="Control" method="post">
+    	<input type="hidden" name="idaccion" value="Logout">
         <button type="submit" class="logout-button">Cerrar sesión</button>
     </form>
 </header>
@@ -106,8 +100,18 @@
 <div class="panel">
     <h2>Seleccione una opción</h2>
     <ul>
-        <li><a href="usuarios.jsp">CRUD de Usuarios</a></li>
-        <li><a href="asignaturas.jsp">CRUD de Asignaturas</a></li>
+        <li>
+        	<form action="Control" method="post">
+        		<input type="hidden" name="idaccion" value="GestionUsuarios">
+        		<button type="submit" class="edit-button">CRUD de Usuarios</button>
+    		</form>
+        </li>
+        <li>
+        	<form action="Control" method="post">
+        		<input type="hidden" name="idaccion" value="GestionAsignaturas">
+        		<button type="submit" class="edit-button">CRUD de Asignaturas</button>
+    		</form>
+		</li>
     </ul>
 </div>
 

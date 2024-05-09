@@ -193,19 +193,17 @@
     <div class="user-info">
         <span>Bienvenido</span>
     </div>
-    <button onclick="logout()" class="logout-button">Cerrar sesión</button>
+    <form action="Control" method="post">
+    	<input type="hidden" name="idaccion" value="Logout">
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+    </form>
 </header>
-
-<script>
-    function logout() {
-        window.location.href = "Control?idaccion=Logout";
-    }
-</script>
 
 <h1>CRUD de Usuarios</h1>
 
 <!-- Formulario para insertar un nuevo usuario -->
-<form action="Control?idaccion=InsertarUsuario" method="post">
+<form action="Control" method="post">
+  <input type="hidden" name="idaccion" value="InsertarUsuario">
   <h2>Insertar un nuevo usuario</h2>
   <label for="usuario">Usuario:</label>
   <input type="text" id="usuario" name="usuario" required>
@@ -238,11 +236,19 @@
       <td><%= user.getUsuario() %></td>
       <td><%= user.getContrasena() %></td>
       <td class="action-buttons">
-      	<!-- Botón para borrar un usuario -->
-        <a href="Control?idaccion=BorrarUsuario&usuario=<%= user.getUsuario() %>" class="delete-button">Borrar</a>
-        <!-- Botón para editar un usuario -->
-        <a href="Control?idaccion=ModUser&usuario=<%= user.getUsuario() %>" class="edit-button">Editar</a>
-      </td>
+    	<!-- Formulario para borrar un usuario -->
+    	<form action="Control" method="post">
+        	<input type="hidden" name="idaccion" value="BorrarUsuario">
+        	<input type="hidden" name="usuario" value="<%= user.getUsuario() %>">
+        	<button type="submit" class="delete-button">Borrar</button>
+    	</form>
+    	<!-- Formulario para editar un usuario -->
+    	<form action="Control" method="post">
+        	<input type="hidden" name="idaccion" value="ModUser">
+        	<input type="hidden" name="usuario" value="<%= user.getUsuario() %>">
+        	<button type="submit" class="edit-button">Editar</button>
+    	</form>
+	  </td>
     </tr>
     <% } %>
   </tbody>

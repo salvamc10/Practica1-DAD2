@@ -86,7 +86,8 @@
     <div class="user-info">
         <span>Bienvenido</span>
     </div>
-    <form action="Control?idaccion=Logout" method="post">
+    <form action="Control" method="post">
+    	<input type="hidden" name="idaccion" value="Logout">
         <button type="submit" class="logout-button">Cerrar sesión</button>
     </form>
 </header>
@@ -94,7 +95,12 @@
 <div class="panel">
     <h2>Seleccione una opción</h2>
     <ul>
-        <li><a href="asignaturas.jsp">CRUD de Asignaturas</a></li>
+        <li>
+        	<form action="Control" method="post">
+        		<input type="hidden" name="idaccion" value="GestionAsignaturas">
+        		<button type="submit" class="edit-button">CRUD de Asignaturas</button>
+    		</form>
+		</li>
     </ul>
 </div>
 

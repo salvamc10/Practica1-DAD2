@@ -74,7 +74,9 @@
 <div class="container">
     <h2>Cambiar contraseña</h2>
     
-    <form action="Control?idaccion=EditarUsuario&usuario=<%=request.getParameter("usuario")%>" method="post">
+    <form action="Control" method="post">
+        <input type="hidden" name="idaccion" value="EditarUsuario">
+        <input type="hidden" name="usuario" value="<%= request.getParameter("usuario") %>">
         <label for="contrasena">Nueva Contraseña:</label>
         <input type="text" id="contrasena" name="contrasena" required>
         <input type="submit" value="Actualizar contraseña">
