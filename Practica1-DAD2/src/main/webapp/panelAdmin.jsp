@@ -69,6 +69,7 @@
         display: block;
         width: 100%;
         padding: 10px;
+        border: none;
         background-color: #007bff;
         color: white;
         text-decoration: none;

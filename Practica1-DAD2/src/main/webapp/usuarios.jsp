@@ -58,8 +58,6 @@
     .form-section {
         padding: 20px;
         border-radius: 10px;
-        background-color: #f9f9f9;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
 
     .form-section h2 {
@@ -122,7 +120,7 @@
 
     .action-buttons {
         display: flex;
-        gap: 10px;
+        gap: 20px;
     }
 
     .edit-button {
@@ -187,11 +185,11 @@
         <form action="Control" method="post">
             <input type="hidden" name="idaccion" value="InsertarUsuario">
             <div class="input-group">
-                <label para="usuario">Usuario:</label>
+                <label for="usuario">Usuario:</label>
                 <input type="text" id="usuario" name="usuario" required>
             </div>
             <div class="input-group">
-                <label para="contrasena">Contraseña:</label>
+                <label for="contrasena">Contraseña:</label>
                 <input type="text" id="contrasena" name="contrasena" required>
             </div>
             <button type="submit" class="submit-button">Insertar usuario</button>
