@@ -193,11 +193,14 @@
     <div class="user-info">
         <span>Bienvenido</span>
     </div>
-    <form action="Control?idaccion=Logout" method="post">
-        <button type="submit" class="logout-button">Cerrar sesión</button>
-    </form>
+    <button onclick="logout()" class="logout-button">Cerrar sesión</button>
 </header>
 
+<script>
+    function logout() {
+        window.location.href = "Control?idaccion=Logout";
+    }
+</script>
 
 <h1>CRUD de Usuarios</h1>
 
