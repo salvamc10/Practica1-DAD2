@@ -14,12 +14,15 @@ import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarUsuario;
+import edu.ucam.actions.GestionAsignaturas;
+import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
 import edu.ucam.actions.ModAsignatura;
 import edu.ucam.actions.ModUser;
+import edu.ucam.pojos.User;
 
 /**
  * Servlet implementation class Control
@@ -54,6 +57,8 @@ public class Control extends HttpServlet {
             actions.put("BorrarAsignatura", new BorrarAsignatura());
             actions.put("EditarAsignatura", new EditarAsignatura());
             actions.put("ModAsignatura", new ModAsignatura());
+            actions.put("GestionUsuarios", new GestionUsuarios());
+            actions.put("GestionAsignaturas", new GestionAsignaturas());
         }
         
         super.init();
@@ -65,16 +70,27 @@ public class Control extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String jsp;
-        String accion = request.getParameter("idaccion");
+        String idaccion = request.getParameter("idaccion");
         
-        // Obtener la acción correspondiente según el parámetro "idaccion"
-        Action action = actions.get(accion);
-        
-        // Ejecutar la acción y obtener la URL de la página resultante
-        jsp = action.doAction(request, response);
-        
-        // Redirigir a la página correspondiente
-        request.getRequestDispatcher(jsp).forward(request, response);
+        if (idaccion == null)
+
+		{
+        	// Redirigir a la página correspondiente
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+
+		else
+
+		{
+			// Obtener la acción correspondiente según el parámetro "idaccion"
+	        Action action = actions.get(idaccion);
+	        
+	        // Ejecutar la acción y obtener la URL de la página resultante
+	        jsp = action.doAction(request, response);
+	        
+	        // Redirigir a la página correspondiente
+	        request.getRequestDispatcher(jsp).forward(request, response);
+		}
 	}
 
 	/**

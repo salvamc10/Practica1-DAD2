@@ -154,19 +154,17 @@
     <div class="user-info">
         <span>Bienvenido</span>
     </div>
-    <button onclick="logout()" class="logout-button">Cerrar sesión</button>
+    <form action="Control" method="post">
+    	<input type="hidden" name="idaccion" value="Logout">
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+    </form>
 </header>
-
-<script>
-    function logout() {
-        window.location.href = "Control?idaccion=Logout";
-    }
-</script>
 
 <h1>CRUD de Asignaturas</h1>
 
 <!-- Formulario para insertar una nueva asignatura -->
-<form action="Control?idaccion=InsertarAsignatura" method="post">
+<form action="Control" method="post">
+  <input type="hidden" name="idaccion" value="InsertarAsignatura">
   <h2>Insertar una nueva asignatura</h2>
   <label for="id">Id:</label>
   <input type="text" id="id" name="id" required>
@@ -199,11 +197,19 @@
       <td><%= asignatura.getId() %></td>
       <td><%= asignatura.getNombre() %></td>
       <td class="action-buttons">
-      	<!-- Botón para borrar una asignatura -->
-        <a href="Control?idaccion=BorrarAsignatura&id=<%= asignatura.getId() %>" class="delete-button">Borrar</a>
-        <!-- Botón para editar una asignatura -->
-        <a href="Control?idaccion=ModAsignatura&id=<%= asignatura.getId() %>" class="edit-button">Editar</a>
-      </td>
+    	<!-- Formulario para borrar un usuario -->
+    	<form action="Control" method="post">
+        	<input type="hidden" name="idaccion" value="BorrarAsignatura">
+        	<input type="hidden" name="id" value="<%= asignatura.getId() %>">
+        	<button type="submit" class="delete-button">Borrar</button>
+    	</form>
+    	<!-- Formulario para editar un usuario -->
+    	<form action="Control" method="post">
+        	<input type="hidden" name="idaccion" value="ModAsignatura">
+        	<input type="hidden" name="id" value="<%= asignatura.getId() %>">
+        	<button type="submit" class="edit-button">Editar</button>
+    	</form>
+	  </td>
     </tr>
     <% } %>
   </tbody>
