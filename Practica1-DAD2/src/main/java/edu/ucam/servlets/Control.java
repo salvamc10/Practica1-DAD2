@@ -20,7 +20,8 @@ import edu.ucam.actions.EditarTurno;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionConvocatorias;
-import edu.ucam.actions.GestionTurno;
+import edu.ucam.actions.GestionTurnos;
+
 import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
 import edu.ucam.actions.InsertarConvocatoria;
@@ -76,7 +77,7 @@ public class Control extends HttpServlet {
             actions.put("BorrarConvocatoria", new BorrarConvocatoria());
             actions.put("InsertarTurno", new InsertarTurno());
             actions.put("BorrarTurno", new BorrarTurno());
-            actions.put("GestionTurno", new GestionTurno());
+            actions.put("GestionTurnos", new GestionTurnos());
             actions.put("ModTurno", new ModTurno());
             actions.put("EditarTurno", new EditarTurno());
         }
