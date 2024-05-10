@@ -18,6 +18,10 @@ import edu.ucam.actions.EditarConvocatoria;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionConvocatorias;
+<<<<<<< Updated upstream
+=======
+import edu.ucam.actions.GestionTurnos;
+>>>>>>> Stashed changes
 import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
 import edu.ucam.actions.InsertarConvocatoria;
@@ -69,6 +73,14 @@ public class Control extends HttpServlet {
             actions.put("EditarConvocatoria", new EditarConvocatoria());
             actions.put("ModConvocatoria", new ModConvocatoria());
             actions.put("BorrarConvocatoria", new BorrarConvocatoria());
+<<<<<<< Updated upstream
+=======
+            actions.put("InsertarTurno", new InsertarTurno());
+            actions.put("BorrarTurno", new BorrarTurno());
+            actions.put("GestionTurnos", new GestionTurnos());
+            actions.put("ModTurno", new ModTurno());
+            actions.put("EditarTurno", new EditarTurno());
+>>>>>>> Stashed changes
         }
         
         super.init();

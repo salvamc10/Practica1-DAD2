@@ -199,6 +199,12 @@
                     <button type="submit">Convocatorias</button>
                 </form>
             </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionTurnos">
+                    <button type="submit">Turnos</button>
+                </form>
+            </li>
         </ul>
     </nav>
     <form action="Control" method="post">

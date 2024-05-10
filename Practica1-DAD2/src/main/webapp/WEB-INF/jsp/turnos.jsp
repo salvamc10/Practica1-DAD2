@@ -1,6 +1,5 @@
-<%@ page import="java.util.Hashtable" %> 
-<%@ page import="edu.ucam.pojos.User" %> 
-<%@ taglib uri="mistags" prefix="listarAdmin" %>
+<%@ page import="java.util.Hashtable" %>
+<%@ page import="edu.ucam.pojos.Turno" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -8,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>CRUD de Usuarios</title>
+<title>CRUD de Asignaturas</title>
 
 <style>
     body {
@@ -181,19 +180,6 @@
     .delete-button:hover {
         background-color: #c82333;
     }
-    
-    .admin-section {
-        margin-top: 40px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .admin-section h2 {
-        text-align: center;
-        color: #333;
-    }
 </style>
 
 </head>
@@ -221,7 +207,7 @@
                     <input type="hidden" name="idaccion" value="GestionTurnos">
                     <button type="submit">Turnos</button>
                 </form>
-            </li>            
+            </li>
         </ul>
     </nav>
     <form action="Control" method="post">
@@ -231,55 +217,55 @@
 </header>
 
 <div class="content">
-    <h1>CRUD de Usuarios</h1>
+    <h1>CRUD de Turnos</h1>
 
-    <!-- Formulario para insertar un nuevo usuario -->
+    <!-- Formulario para insertar una nueva asignatura -->
     <div class="form-section">
-        <h2>Insertar un nuevo usuario</h2>
+        <h2>Insertar nuevo turno</h2>
         <form action="Control" method="post">
-            <input type="hidden" name="idaccion" value="InsertarUsuario">
+            <input type="hidden" name="idaccion" value="InsertarTurno">
             <div class="input-group">
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
+                <label for="idTurno">ID:</label>
+      			<input type="text" id="idTurno" name="idTurno" required>
             </div>
             <div class="input-group">
-                <label for="contrasena">Contraseña:</label>
-                <input type="text" id="contrasena" name="contrasena" required>
+                <label for="nombreTurno">Nombre:</label>
+      			<input type="text" id="nombreTurno" name="nombreTurno" required>
             </div>
-            <button type="submit" class="submit-button">Insertar usuario</button>
+            <button type="submit" class="submit-button">Insertar turno</button>
         </form>
     </div>
 
     <%
-    if (request.getServletContext().getAttribute("users") != null) {
-        Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
+    if (request.getServletContext().getAttribute("turnos") != null) {
+        Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos");
     %>
     <!-- Tabla de listado de usuarios -->
-    <h2>Listado de usuarios</h2>
+    <h2>Listado de turnos</h2>
     <table>
         <thead>
             <tr>
-                <th>Usuario</th>
-                <th>Contraseña</th>
+                <th>ID</th>
+                <th>Nombre</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             <% 
-            for (User user : users.values()) {
+            for (Turno turno : turnos.values()) {
             %>
             <tr>
-                <td><%= user.getUsuario() %></td>
-                <td><%= user.getContrasena() %></td>
+                <td><%= turno.getIdTurno() %></td>
+                <td><%= turno.getNombreTurno() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="BorrarUsuario">
-                        <input type="hidden" name="usuario" value="<%= user.getUsuario() %>">
+                        <input type="hidden" name="idaccion" value="BorrarTurno">
+                        <input type="hidden" name="idTurno" value="<%= turno.getIdTurno() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="ModUser">
-                        <input type="hidden" name="usuario" value="<%= user.getUsuario() %>">
+                        <input type="hidden" name="idaccion" value="ModTurno">
+                        <input type="hidden" name="idTurno" value="<%= turno.getIdTurno() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>
                 </td>
@@ -292,16 +278,10 @@
     <% 
     } else { 
     %>
-    <p>No hay usuarios registrados.</p>
+    <p>No hay turnos registrados.</p>
     <% 
     } 
     %>
-</div>
-
-<!-- Sección para listar administradores -->
-<div class="admin-section">
-    <h2>Listar Administradores</h2>
-    <listarAdmin:listar tipo="admin"/>
 </div>
 
 </body>
