@@ -16,30 +16,23 @@ public class InsertarConvocatoria extends Action {
 		String id = request.getParameter("id");
 		String nombre = request.getParameter("nombre");
 		
-		// Obtener la Hashtable de convocatorias del contexto del servlet
+		// Obtener la Hashtable de convocatorias y verificar si ya existe una convocatoria con el mismo id
 		Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias");
-		
-		// Verificar si ya existe una convocatoria con el mismo id
 		Convocatoria convocatoria = convocatorias.get(id);
 		
 		// Si no existe una convocatoria con el mismo id y los campos del id y nombre no están vacíos
 		if(convocatoria == null && !id.isEmpty() && !nombre.isEmpty()) {
 			 
-			// Crear una nueva convocatoria con los datos proporcionados
+			// Crear una nueva convocatoria y agregar la nueva convocatoria a la Hashtable
 			convocatoria = new Convocatoria(id, nombre);
-			
-			// Agregar la nueva convocatoria a la Hashtable
 			convocatorias.put(id, convocatoria);
-			
-			// Imprimir un mensaje en la consola indicando que la convocatoria ha sido insertada
 			System.out.println("Convocatoria Insertada");
 		}
 		else {
-			// Imprimir un mensaje en la consola indicando que la convocatoria no fue insertada debido a una convocatoria existente o datos incorrectos
 			System.out.println("Convocatoria no insertada. Convocatoria ya existente o datos mal introducidos");
 		}
 		
-		// Redirigir a la página "convocatorias.jsp" después de insertar la asignatura
+		// Volvemos de nuevo a la jsp de convocatorias
 		return "convocatorias.jsp";
 	}
 

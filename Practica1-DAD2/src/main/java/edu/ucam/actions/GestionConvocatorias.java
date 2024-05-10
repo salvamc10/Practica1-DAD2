@@ -7,7 +7,8 @@ public class GestionConvocatorias extends Action {
 
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		
+		// Nos dirige a la jsp de convocatorias
 		return "convocatorias.jsp";
 	}
 
