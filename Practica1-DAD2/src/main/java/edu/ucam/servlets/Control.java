@@ -12,20 +12,25 @@ import java.util.Hashtable;
 import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarConvocatoria;
+import edu.ucam.actions.BorrarTurno;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarConvocatoria;
+import edu.ucam.actions.EditarTurno;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionConvocatorias;
+import edu.ucam.actions.GestionTurno;
 import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
 import edu.ucam.actions.InsertarConvocatoria;
+import edu.ucam.actions.InsertarTurno;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
 import edu.ucam.actions.ModAsignatura;
 import edu.ucam.actions.ModConvocatoria;
+import edu.ucam.actions.ModTurno;
 import edu.ucam.actions.ModUser;
 import edu.ucam.pojos.User;
 
@@ -69,6 +74,11 @@ public class Control extends HttpServlet {
             actions.put("EditarConvocatoria", new EditarConvocatoria());
             actions.put("ModConvocatoria", new ModConvocatoria());
             actions.put("BorrarConvocatoria", new BorrarConvocatoria());
+            actions.put("InsertarTurno", new InsertarTurno());
+            actions.put("BorrarTurno", new BorrarTurno());
+            actions.put("GestionTurno", new GestionTurno());
+            actions.put("ModTurno", new ModTurno());
+            actions.put("EditarTurno", new EditarTurno());
         }
         
         super.init();
