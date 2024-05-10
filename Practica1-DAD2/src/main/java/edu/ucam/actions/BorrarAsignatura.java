@@ -12,15 +12,15 @@ public class BorrarAsignatura extends Action {
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
-		String id = request.getParameter("id");
+		String idAsignatura = request.getParameter("idAsignatura");
 		
 		// Obtener la Hashtable de asignaturas y la asignatura
         Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");       
-        Asignatura asignatura = asignaturas.get(id);
+        Asignatura asignatura = asignaturas.get(idAsignatura);
         
         // Verificar si la asignatura existe y eliminarla
         if(asignatura != null ) {            
-            asignaturas.remove(id, asignatura);
+            asignaturas.remove(idAsignatura, asignatura);
             System.out.println("Asignatura Borrada");  
         }
         else {
