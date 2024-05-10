@@ -14,6 +14,7 @@ import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarConvocatoria;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
+import edu.ucam.actions.EditarConvocatoria;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionConvocatorias;
