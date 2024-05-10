@@ -2,7 +2,6 @@ package edu.ucam.actions;
 
 import java.util.Hashtable;
 
-import edu.ucam.pojos.Asignatura;
 import edu.ucam.pojos.Convocatoria;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,7 +21,7 @@ public class EditarConvocatoria extends Action{
 		Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias");
 				
 		// Crear un nuevo objeto Asignatura utilizando los parámetros del formulario
-		Convocatoria convocatoria = new Convocatoria(request.getParameter("id"), request.getParameter("nombre"));
+		Convocatoria convocatoria = new Convocatoria(request.getParameter("idConvocatoria"), request.getParameter("nombreConvocatoria"));
 				
 		// Reemplazar la asignatura existente con el mismo id de asignatura en el Hashtable
 		convocatorias.replace(convocatoria.getIdConvocatoria(), convocatoria);
