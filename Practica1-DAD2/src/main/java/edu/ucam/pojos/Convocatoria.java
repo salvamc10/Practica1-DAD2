@@ -4,13 +4,14 @@ import java.util.Hashtable;
 
 public class Convocatoria {
 
-	// Atributos de la clase Convocatoria
 	private String idConvocatoria;
 	private String nombreConvocatoria;
+	private Hashtable<String, Turno> turnos;
 	
 	public Convocatoria(String idConvocatoria, String nombreConvocatoria) {
 		this.idConvocatoria = idConvocatoria;
 		this.nombreConvocatoria = nombreConvocatoria;
+		this.turnos = new Hashtable<String, Turno>();
 	}
 
 	public String getIdConvocatoria() {
@@ -27,6 +28,23 @@ public class Convocatoria {
 
 	public void setNombreConvocatoria(String nombreConvocatoria) {
 		this.nombreConvocatoria = nombreConvocatoria;
+	}
+
+	public Hashtable<String, Turno> getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(Hashtable<String, Turno> turnos) {
+		this.turnos = turnos;
+	}
+	
+	public void addTurno(String idTurno, Turno turno) {
+		
+		this.turnos.put(idTurno, turno);
+	}
+	
+	public String toString() {
+		return nombreConvocatoria;
 	}
 	
 }
