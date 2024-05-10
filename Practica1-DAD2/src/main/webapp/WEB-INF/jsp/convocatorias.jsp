@@ -246,17 +246,17 @@
             for (Convocatoria convocatoria : convocatorias.values()) {
             %>
             <tr>
-                <td><%= convocatoria.getId() %></td>
-                <td><%= convocatoria.getNombre() %></td>
+                <td><%= convocatoria.getIdConvocatoria() %></td>
+                <td><%= convocatoria.getNombreConvocatoria() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="BorrarConvocatoria">
-                        <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
+                        <input type="hidden" name="id" value="<%= convocatoria.getIdConvocatoria() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="ModConvocatoria">
-                        <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
+                        <input type="hidden" name="id" value="<%= convocatoria.getIdConvocatoria() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>
                 </td>

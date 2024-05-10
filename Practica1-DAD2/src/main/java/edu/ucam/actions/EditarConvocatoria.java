@@ -25,10 +25,9 @@ public class EditarConvocatoria extends Action{
 		Convocatoria convocatoria = new Convocatoria(request.getParameter("id"), request.getParameter("nombre"));
 				
 		// Reemplazar la asignatura existente con el mismo id de asignatura en el Hashtable
-		convocatorias.replace(convocatoria.getId(), convocatoria);
+		convocatorias.replace(convocatoria.getIdConvocatoria(), convocatoria);
 				
 		// Volvemos a la jsp de convocatorias
 		return "/WEB-INF/jsp/convocatorias.jsp";
 	}
-
 }
