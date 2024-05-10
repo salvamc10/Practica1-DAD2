@@ -28,7 +28,7 @@ public class EditarConvocatoria extends Action{
 		convocatorias.replace(convocatoria.getId(), convocatoria);
 				
 		// Volvemos a la jsp de convocatorias
-		return "convocatorias.jsp";
+		return "/WEB-INF/jsp/convocatorias.jsp";
 	}
 
 }

@@ -31,6 +31,6 @@ public class InsertarAsignatura extends Action {
 		}
 		
 		// Nos mantenemos en la misma jsp
-		return "asignaturas.jsp";
+		return "/WEB-INF/jsp/asignaturas.jsp";
 	}
 }

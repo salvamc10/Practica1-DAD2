@@ -26,6 +26,6 @@ public class EditarAsignatura extends Action {
 		asignaturas.replace(asignatura.getId(), asignatura);
 		
 		// Retornar la página "asignaturas.jsp" después de editar el usuario
-		return "asignaturas.jsp";
+		return "/WEB-INF/jsp/asignaturas.jsp";
 	}
 }

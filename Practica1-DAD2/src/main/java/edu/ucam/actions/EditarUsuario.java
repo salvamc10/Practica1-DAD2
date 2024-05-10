@@ -21,7 +21,7 @@ public class EditarUsuario extends Action{
 		users.replace(user.getUsuario(), user);
 		
 		// Nos lleva a la JSP  de usuarios
-		return "usuarios.jsp";
+		return "/WEB-INF/jsp/usuarios.jsp";
 	}
 
 }

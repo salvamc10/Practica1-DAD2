@@ -28,7 +28,7 @@ public class BorrarConvocatoria extends Action {
         }
         
         // nos mantiene en la misma jsp
-		return "convocatorias.jsp";
+		return "/WEB-INF/jsp/convocatorias.jsp";
 	}
 	
 }

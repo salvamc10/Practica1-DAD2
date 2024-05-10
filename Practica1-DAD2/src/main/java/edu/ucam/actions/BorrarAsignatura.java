@@ -28,6 +28,6 @@ public class BorrarAsignatura extends Action {
         }
         
         // nos mantiene en la misma jsp
-		return "asignaturas.jsp";
+		return "/WEB-INF/jsp/asignaturas.jsp";
 	}
 }

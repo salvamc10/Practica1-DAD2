@@ -9,7 +9,7 @@ public class ModConvocatoria extends Action{
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
 		// llamamos a la jsp para cambiar la convocatoria
-		return "editarConvocatoria.jsp";
+		return "/WEB-INF/jsp/editarConvocatoria.jsp";
 	}
 
 }

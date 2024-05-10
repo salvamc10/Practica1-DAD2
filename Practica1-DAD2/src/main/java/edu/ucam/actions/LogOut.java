@@ -10,7 +10,7 @@ public class LogOut extends Action{
 
 		// Elimina el atributo "user" de la sesión actual y vuelve al login
         request.getSession().removeAttribute("user");
-        return "index.jsp";
+        return "/WEB-INF/jsp/index.jsp";
         
 	}
 

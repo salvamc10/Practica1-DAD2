@@ -32,7 +32,7 @@ public class InsertarUsuario extends Action{
         }
         
         // Nos mantenemos en la jsp
-        return "usuarios.jsp";    
+        return "/WEB-INF/jsp/usuarios.jsp";    
     }
 
 }

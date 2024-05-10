@@ -24,7 +24,7 @@ public class BorrarUsuario extends Action{
         }
                 
         // Nos mantiene en la misma jsp
-        return "usuarios.jsp";    
+        return "/WEB-INF/jsp/usuarios.jsp";    
     }
 
 }

@@ -9,6 +9,6 @@ public class ModAsignatura extends Action {
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
 		//llamamos a la jsp para cambiar el nombre
-		return "editarAsignatura.jsp";
+		return "/WEB-INF/jsp/editarAsignatura.jsp";
 	}
 }

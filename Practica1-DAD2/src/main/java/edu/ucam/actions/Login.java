@@ -28,22 +28,22 @@ public class Login extends Action{
 		    	// Verificar si el usuario es "admin"
 		        if (user.getUsuario().equals("admin")) {
 		        	// Si el usuario es "admin", redirigir al panel de administrador
-		            return "panelAdmin.jsp";
+		            return "/WEB-INF/jsp/panelAdmin.jsp";
 		        } else {
 		        	// Si no es "admin", redirigir al panel de usuario
-		            return "panelUser.jsp";
+		            return "/WEB-INF/jsp/panelUser.jsp";
 		        }
 		        
 		    } else {
 		    	// Si la contraseña no coincide, mostrar un mensaje de error y redirigir a la página "index.jsp"
 		    	request.setAttribute("LOGIN", true);
-		        return "index.jsp";
+		        return "/WEB-INF/jsp/index.jsp";
 		    }
 		    
 		} else {
 		    // Si no se encontró un usuario con el nombre proporcionado, mostrar un mensaje de error y redirigir a la página "index.jsp"
 			request.setAttribute("LOGIN", true);
-		    return "index.jsp";
+		    return "/WEB-INF/jsp/index.jsp";
 		}
 	}
 }

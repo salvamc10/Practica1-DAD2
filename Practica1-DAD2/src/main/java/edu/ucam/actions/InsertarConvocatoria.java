@@ -39,8 +39,13 @@ public class InsertarConvocatoria extends Action {
 			System.out.println("Convocatoria no insertada. Convocatoria ya existente o datos mal introducidos");
 		}
 		
+<<<<<<< Updated upstream
 		// Redirigir a la página "convocatorias.jsp" después de insertar la asignatura
 		return "convocatorias.jsp";
+=======
+		// Volvemos de nuevo a la jsp de convocatorias
+		return "/WEB-INF/jsp/convocatorias.jsp";
+>>>>>>> Stashed changes
 	}
 
 }

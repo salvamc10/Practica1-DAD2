@@ -8,7 +8,7 @@ public class GestionUsuarios extends Action{
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		// nos lleva a la jsp usuarios
-		return "usuarios.jsp";
+		return "/WEB-INF/jsp/usuarios.jsp";
 	}
 
 }

@@ -9,7 +9,7 @@ public class ModUser extends Action{
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
 		//llamamos a la jsp para cambiar la contraseña
-		return "editarUsuario.jsp";
+		return "/WEB-INF/jsp/editarUsuario.jsp";
 	}
 
 }
