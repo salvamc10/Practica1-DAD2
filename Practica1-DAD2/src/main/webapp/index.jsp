@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" 
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Login Exámenes UCAM</title>
+
 <style>
-  /* Estilos globales para el cuerpo de la página */
   body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -18,7 +19,6 @@
     height: 100vh; 
   }
 
-  /* Estilos específicos para el formulario */
   form {
     background-color: #fff;
     padding: 20px;
@@ -28,13 +28,11 @@
     position: relative;
   }
 
-  /* Estilos para el título del formulario */
   h1 {
     text-align: center;
     color: #333;
   }
 
-  /* Estilos para los campos de texto y contraseña */
   input[type="text"],
   input[type="password"],
   input[type="submit"] {
@@ -46,7 +44,6 @@
     box-sizing: border-box; 
   }
 
-  /* Estilos específicos para el botón de submit */
   input[type="submit"] {
     margin-top: 10px; 
     background-color: #007bff;
@@ -54,23 +51,22 @@
     cursor: pointer;
   }
 
-  /* Cambio de color al pasar el ratón sobre el botón */
   input[type="submit"]:hover {
     background-color: #0056b3;
   }
 
-  /* Estilos para el mensaje de credenciales incorrectas */
   .error-message {
     color: red;
     text-align: center;
   }
 </style>
+
 </head>
+
 <body>
 <form action="Control" method="post">
   <input type="hidden" name="idaccion" value="Login">
 
-  <!-- Título del formulario -->
   <h1>Iniciar Sesión</h1>
   
   <!-- Etiqueta y campo de entrada para el usuario -->
@@ -83,7 +79,6 @@
   <input type="password" id="contrasena" name="contrasena">
   <br>
   
-  <!-- Botón de submit -->
   <input type="submit" value="Login">
   
   <!-- Mensaje de error -->

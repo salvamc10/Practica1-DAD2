@@ -15,30 +15,22 @@ public class InsertarAsignatura extends Action {
 		String id = request.getParameter("id");
 		String nombre = request.getParameter("nombre");
 		
-		// Obtener la Hashtable de asignaturas del contexto del servlet
+		// Obtener la Hashtable de asignaturas y verificar si ya existe una asignatura con el mismo id
 		Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
-		 
-		// Verificar si ya existe una asignatura con el mismo id
 		Asignatura asignatura = asignaturas.get(id);
 		
 		// Si no existe una asignatura con el mismo id y los campos del id y nombre no están vacíos
-		if(asignatura == null && !id.isEmpty() && !nombre.isEmpty()) {
-			 
-			// Crear una nueva asignatura con los datos proporcionados
+		if(asignatura == null && !id.isEmpty() && !nombre.isEmpty()) {			 
+			// Crear una nueva asignatura y agregarla
 			asignatura = new Asignatura(id, nombre);
-			
-			// Agregar la nueva asignatura a la Hashtable
 			asignaturas.put(id, asignatura);
-			
-			// Imprimir un mensaje en la consola indicando que la asignatura ha sido insertada
 			System.out.println("Asignatura Insertada");
 		}
 		else {
-			// Imprimir un mensaje en la consola indicando que la asignatura no fue insertada debido a una asignatura existente o datos incorrectos
 			System.out.println("Asignatura no insertada. Asignatura ya existente o datos mal introducidos");
 		}
 		
-		// Redirigir a la página "asignaturas.jsp" después de insertar la asignatura
+		// Nos mantenemos en la misma jsp
 		return "asignaturas.jsp";
 	}
 }

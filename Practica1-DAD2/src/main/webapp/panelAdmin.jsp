@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <title>Panel de Opciones</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -82,7 +84,9 @@
         background-color: #0056b3;
     }
 </style>
+
 </head>
+
 <body>
 
 <header>
@@ -106,6 +110,12 @@
         	<form action="Control" method="post">
         		<input type="hidden" name="idaccion" value="GestionAsignaturas">
         		<button type="submit" class="action-button">CRUD de Asignaturas</button>
+    		</form>
+		</li>
+		 <li>
+        	<form action="Control" method="post">
+        		<input type="hidden" name="idaccion" value="GestionConvocatorias">
+        		<button type="submit" class="action-button">CRUD de Convocatorias</button>
     		</form>
 		</li>
     </ul>

@@ -1,13 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cambiar nombre</title>
+
 <style>
-    /* Estilos generales */
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -15,7 +16,6 @@
         padding: 0;
     }
 
-    /* Estilos del contenedor */
     .container {
         max-width: 400px;
         margin: 50px auto;
@@ -25,26 +25,22 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Estilos para el título */
     h2 {
         text-align: center;
         color: #333;
         margin-bottom: 20px;
     }
 
-    /* Estilos para el formulario */
     form {
         display: flex;
         flex-direction: column;
     }
 
-    /* Estilos para las etiquetas */
     label {
         margin-bottom: 10px;
         font-weight: bold;
     }
 
-    /* Estilos para los campos de texto */
     input[type="text"] {
         padding: 10px;
         margin-bottom: 20px;
@@ -53,7 +49,6 @@
         box-sizing: border-box;
     }
 
-    /* Estilos para los botones de envío */
     input[type="submit"] {
         padding: 10px;
         background-color: #007bff;
@@ -67,8 +62,11 @@
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
+    
 </style>
+
 </head>
+
 <body>
 
 <div class="container">

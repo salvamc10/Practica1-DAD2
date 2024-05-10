@@ -16,8 +16,10 @@ import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarConvocatoria;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
+import edu.ucam.actions.GestionConvocatorias;
 import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
+import edu.ucam.actions.InsertarConvocatoria;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
@@ -60,8 +62,9 @@ public class Control extends HttpServlet {
             actions.put("ModAsignatura", new ModAsignatura());
             actions.put("GestionUsuarios", new GestionUsuarios());
             actions.put("GestionAsignaturas", new GestionAsignaturas());
-            actions.put("EditarConvocatoria", new EditarConvocatoria());
-            actions.put("ModConvocatoria", new EditarConvocatoria());
+            actions.put("InsertarConvocatoria", new InsertarConvocatoria());
+            actions.put("GestionConvocatorias", new GestionConvocatorias());
+        main
         }
         
         super.init();
@@ -77,17 +80,13 @@ public class Control extends HttpServlet {
         
         if (idaccion == null){
         	
-        	// Redirigir a la página correspondiente
+        	// Redirigir a la página del login
             request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else{
 		
-			// Obtener la acción correspondiente según el parámetro "idaccion"
+			// Obtener la acción correspondiente, ejecutar la acción y obtener la URL de la página resultante
 	        Action action = actions.get(idaccion);
-	        
-	        // Ejecutar la acción y obtener la URL de la página resultante
 	        jsp = action.doAction(request, response);
-	        
-	        // Redirigir a la página correspondiente
 	        request.getRequestDispatcher(jsp).forward(request, response);
 		}
 	}

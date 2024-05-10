@@ -16,30 +16,22 @@ public class InsertarUsuario extends Action{
         String usuario = request.getParameter("usuario");
         String contrasena = request.getParameter("contrasena");
 
-        // Obtener la Hashtable de usuarios del contexto del servlet
-        Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
-        
-        // Verificar si ya existe un usuario con el mismo nombre
+        // Obtener la Hashtable de usuarios y verificar si ya existe un usuario con el mismo nombre
+        Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");     
         User user = users.get(usuario);
         
         // Si no existe un usuario con el mismo nombre y los campos de usuario y contraseña no están vacíos
-        if(user == null && !usuario.isEmpty() && !contrasena.isEmpty()) {
-            
-            // Crear un nuevo usuario con los datos proporcionados
+        if(user == null && !usuario.isEmpty() && !contrasena.isEmpty()) {            
+            // Crear un nuevo usuario y agregarlo
             user = new User(usuario, contrasena);
-            
-            // Agregar el nuevo usuario a la Hashtable
             users.put(usuario, user);
-            
-            // Imprimir un mensaje en la consola indicando que el usuario ha sido insertado
             System.out.println("Usuario insertado");
             
         } else {
-            // Imprimir un mensaje en la consola indicando que el usuario no fue insertado debido a un usuario existente o datos incorrectos
             System.out.println("Usuario no insertado. Usuario ya existente o datos mal introducidos");
         }
         
-        // Redirigir a la página "usuarios.jsp" después de insertar el usuario
+        // Nos mantenemos en la jsp
         return "usuarios.jsp";    
     }
 
