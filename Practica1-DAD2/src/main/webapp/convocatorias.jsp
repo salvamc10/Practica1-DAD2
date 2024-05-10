@@ -187,7 +187,7 @@
         Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias");
     %>
     <!-- Tabla de listado de usuarios -->
-    <h2>Listado de asignaturas</h2>
+    <h2>Listado de convocatorias</h2>
     <table>
         <thead>
             <tr>
@@ -205,7 +205,7 @@
                 <td><%= convocatoria.getNombre() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="BorrarAsignatura">
+                        <input type="hidden" name="idaccion" value="BorrarConvocatoria">
                         <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
