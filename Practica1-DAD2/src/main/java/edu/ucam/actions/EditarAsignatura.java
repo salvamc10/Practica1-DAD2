@@ -23,7 +23,7 @@ public class EditarAsignatura extends Action {
 		Asignatura asignatura = new Asignatura(request.getParameter("id"), request.getParameter("nombre"));
 		
 		// Reemplazar la asignatura existente con el mismo id de asignatura en el Hashtable
-		asignaturas.replace(asignatura.getId(), asignatura);
+		asignaturas.replace(asignatura.getIdAsignatura(), asignatura);
 		
 		// Retornar la página "asignaturas.jsp" después de editar el usuario
 		return "/WEB-INF/jsp/asignaturas.jsp";
