@@ -16,10 +16,8 @@ public class Login extends Action{
 		String usuario = request.getParameter("usuario");
 		String contrasena = request.getParameter("contrasena");
 
-		// Obtener la Hashtable de usuarios del contexto del servlet
+		// Obtener la Hashtable de usuarios y el usuario en si
 		Hashtable<String, User> users = (Hashtable<String, User>) request.getServletContext().getAttribute("users");
-
-		// Obtener el usuario de la Hashtable usando el nombre de usuario proporcionado
 		User user = users.get(usuario);
 
 		// Verificar si se encontró un usuario con el nombre proporcionado

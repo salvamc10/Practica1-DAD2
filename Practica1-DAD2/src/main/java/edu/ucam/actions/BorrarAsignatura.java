@@ -12,29 +12,22 @@ public class BorrarAsignatura extends Action {
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
-		//Obtener el parámetro "id" del formulario
 		String id = request.getParameter("id");
 		
-		// Obtener la Hashtable de asignaturas del contexto del servlet
-        Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
-        
-        // Obtener la asignatura correspondiente al id de asignatura proporcionado
+		// Obtener la Hashtable de asignaturas y la asignatura
+        Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");       
         Asignatura asignatura = asignaturas.get(id);
         
-        // Verificar si la asignatura existe
-        if(asignatura != null ) {
-            
-            // Si existe, eliminarla de la Hashtable
+        // Verificar si la asignatura existe y eliminarla
+        if(asignatura != null ) {            
             asignaturas.remove(id, asignatura);
-                    
-            // Imprimir un mensaje en la consola indicando que la asignatura ha sido borrada
             System.out.println("Asignatura Borrada");  
         }
         else {
         	System.out.println("ERROR");
         }
         
-        // Redirigir a la página "asignaturas.jsp" después de borrar la asignatura
+        // nos mantiene en la misma jsp
 		return "asignaturas.jsp";
 	}
 }

@@ -2,6 +2,7 @@ package edu.ucam.pojos;
 
 public class Convocatoria {
 
+	// Atributos de la clase Convocatoria
 	private String id;
 	private String nombre;
 	
@@ -10,6 +11,7 @@ public class Convocatoria {
 		this.nombre = nombre;
 	}
 
+	// Métodos getter y setter
 	public String getId() {
 		return id;
 	}

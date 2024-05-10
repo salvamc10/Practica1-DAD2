@@ -8,9 +8,8 @@ public class LogOut extends Action{
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 
-		// Elimina el atributo "user" de la sesión actual
+		// Elimina el atributo "user" de la sesión actual y vuelve al login
         request.getSession().removeAttribute("user");
-        // Retorna la página de inicio de sesión
         return "index.jsp";
         
 	}
