@@ -21,11 +21,40 @@
     
     header {
         background-color: #007bff;
-        color: white;
-        padding: 15px 20px;
+        color: #fff;
+        padding: 12px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    nav ul li button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    nav ul li button:hover {
+        background-color: #0056b3;
     }
 
     .logout-button {
@@ -172,11 +201,27 @@
 <body>
 
 <header>
-    <div>Bienvenido</div>
+	Bienvenido
+    <nav>
+        <ul>
+            <li>
+               <form action="Control" method="post">
+                   <input type="hidden" name="idaccion" value="GestionAsignaturas">
+                   <button type="submit">Asignaturas</button>
+               </form>
+            </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionConvocatorias">
+                    <button type="submit">Convocatorias</button>
+                </form>
+            </li>            
+        </ul>
+    </nav>
     <form action="Control" method="post">
         <input type="hidden" name="idaccion" value="Logout">
-        <button type="submit" class="logout-button">Cerrar sesión</button>
-    </form>
+    	<button type="submit" class="logout-button">Cerrar sesión</button>
+	</form>
 </header>
 
 <div class="content">
