@@ -13,6 +13,7 @@ import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
+import edu.ucam.actions.EditarConvocatoria;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionUsuarios;
@@ -59,6 +60,8 @@ public class Control extends HttpServlet {
             actions.put("ModAsignatura", new ModAsignatura());
             actions.put("GestionUsuarios", new GestionUsuarios());
             actions.put("GestionAsignaturas", new GestionAsignaturas());
+            actions.put("EditarConvocatoria", new EditarConvocatoria());
+            actions.put("ModConvocatoria", new EditarConvocatoria());
         }
         
         super.init();

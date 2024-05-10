@@ -77,7 +77,7 @@
     <form action="Control" method="post">
         <input type="hidden" name="idaccion" value="EditarAsignatura">
         <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
-        <label for="contrasena">Nuevo Nombre:</label>
+        <label for="nombre">Nuevo Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         <input type="submit" value="Cambiar nombre">
     </form>
