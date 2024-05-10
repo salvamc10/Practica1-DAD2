@@ -210,7 +210,7 @@
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="ModAsignatura">
+                        <input type="hidden" name="idaccion" value="ModConvocatoria">
                         <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>

@@ -25,6 +25,7 @@ import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
 import edu.ucam.actions.ModAsignatura;
+import edu.ucam.actions.ModConvocatoria;
 import edu.ucam.actions.ModUser;
 import edu.ucam.pojos.User;
 
@@ -65,6 +66,8 @@ public class Control extends HttpServlet {
             actions.put("GestionAsignaturas", new GestionAsignaturas());
             actions.put("InsertarConvocatoria", new InsertarConvocatoria());
             actions.put("GestionConvocatorias", new GestionConvocatorias());
+            actions.put("EditarConvocatoria", new EditarConvocatoria());
+            actions.put("ModConvocatoria", new ModConvocatoria());
             actions.put("BorrarConvocatoria", new BorrarConvocatoria());
         }
         
