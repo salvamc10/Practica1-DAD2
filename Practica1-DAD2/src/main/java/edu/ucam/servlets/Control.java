@@ -11,6 +11,7 @@ import java.util.Hashtable;
 
 import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarAsignatura;
+import edu.ucam.actions.BorrarConvocatoria;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarUsuario;
@@ -63,6 +64,7 @@ public class Control extends HttpServlet {
             actions.put("GestionAsignaturas", new GestionAsignaturas());
             actions.put("InsertarConvocatoria", new InsertarConvocatoria());
             actions.put("GestionConvocatorias", new GestionConvocatorias());
+            actions.put("BorrarConvocatoria", new BorrarConvocatoria());
         }
         
         super.init();
