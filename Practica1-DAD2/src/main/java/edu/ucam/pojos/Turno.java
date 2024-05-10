@@ -38,5 +38,8 @@ public class Turno {
 		this.asignaturas = asignaturas;
 	}
 	
+    public void agregarAsignatura(Asignatura asignatura) {
+        this.asignaturas.put(id, asignatura);
+    }
 
 }
