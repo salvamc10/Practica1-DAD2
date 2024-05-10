@@ -13,6 +13,7 @@ import edu.ucam.actions.Action;
 import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
+import edu.ucam.actions.EditarConvocatoria;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
 import edu.ucam.actions.GestionConvocatorias;
@@ -63,6 +64,7 @@ public class Control extends HttpServlet {
             actions.put("GestionAsignaturas", new GestionAsignaturas());
             actions.put("InsertarConvocatoria", new InsertarConvocatoria());
             actions.put("GestionConvocatorias", new GestionConvocatorias());
+        main
         }
         
         super.init();
