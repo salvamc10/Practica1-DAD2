@@ -7,7 +7,7 @@ public class GestionUsuarios extends Action{
 
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		// nos lleva a la jsp usuarios
 		return "usuarios.jsp";
 	}
 

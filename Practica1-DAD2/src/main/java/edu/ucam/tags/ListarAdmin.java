@@ -25,6 +25,7 @@ public class ListarAdmin extends BodyTagSupport{
 				
 				if(users != null) {
 					
+					// Recorre toda la hashtable y muestra los campos Usuario y contraseña
 					for(User user: users.values()) {
 						if(usuario.equals(user.getUsuario())) {
 							
@@ -32,6 +33,8 @@ public class ListarAdmin extends BodyTagSupport{
 						}
 					}		
 				}else {
+					
+					// Si no hay ningún admin, muestra error
 					pageContext.getOut().println("Atributo usuario vacío");
 				}
 				

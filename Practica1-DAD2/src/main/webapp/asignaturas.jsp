@@ -2,19 +2,21 @@
 <%@ page import="edu.ucam.pojos.Asignatura" %>
 <%@ page import="edu.ucam.pojos.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <title>CRUD de Asignaturas</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding: 0;
-        line-height: 1.6; /* Para mayor legibilidad */
+        line-height: 1.6;
     }
     
     header {
@@ -151,7 +153,9 @@
         background-color: #c82333;
     }
 </style>
+
 </head>
+
 <body>
 
 <header>

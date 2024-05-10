@@ -7,7 +7,7 @@ public class GestionAsignaturas extends Action{
 
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		// Nos lleva a la jsp de asignaturas
 		return "asignaturas.jsp";
 	}
 

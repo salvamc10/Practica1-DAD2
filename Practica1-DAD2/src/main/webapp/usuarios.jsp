@@ -2,19 +2,21 @@
 <%@ page import="edu.ucam.pojos.User" %> 
 <%@ taglib uri="mistags" prefix="listarAdmin" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <title>CRUD de Usuarios</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding: 0;
-        line-height: 1.6; /* Para mayor legibilidad */
+        line-height: 1.6;
     }
     
     header {
@@ -151,7 +153,6 @@
         background-color: #c82333;
     }
     
-    /* Estilos para la sección de administradores */
     .admin-section {
         margin-top: 40px;
         padding: 20px;
@@ -165,7 +166,9 @@
         color: #333;
     }
 </style>
+
 </head>
+
 <body>
 
 <header>

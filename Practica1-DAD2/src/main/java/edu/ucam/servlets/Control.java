@@ -74,17 +74,13 @@ public class Control extends HttpServlet {
         
         if (idaccion == null){
         	
-        	// Redirigir a la página correspondiente
+        	// Redirigir a la página del login
             request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else{
 		
-			// Obtener la acción correspondiente según el parámetro "idaccion"
+			// Obtener la acción correspondiente, ejecutar la acción y obtener la URL de la página resultante
 	        Action action = actions.get(idaccion);
-	        
-	        // Ejecutar la acción y obtener la URL de la página resultante
 	        jsp = action.doAction(request, response);
-	        
-	        // Redirigir a la página correspondiente
 	        request.getRequestDispatcher(jsp).forward(request, response);
 		}
 	}

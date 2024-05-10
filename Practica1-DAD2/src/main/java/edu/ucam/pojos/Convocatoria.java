@@ -2,16 +2,19 @@ package edu.ucam.pojos;
 
 public class Convocatoria {
 
+	// Atributos de la clase Convocatoria
 	private String id;
 	private String asignatura;
 	private String turno;
 	
+	// Constructor de la clase Convocatoria
 	public Convocatoria(String id, String asignatura, String turno) {
 		this.id = id;
 		this.asignatura = asignatura;
 		this.turno = turno;
 	}
 
+	// Métodos getter y setter
 	public String getId() {
 		return id;
 	}
