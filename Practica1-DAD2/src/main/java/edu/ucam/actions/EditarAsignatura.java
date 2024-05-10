@@ -20,7 +20,7 @@ public class EditarAsignatura extends Action {
 		Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
 		
 		// Crear un nuevo objeto Asignatura utilizando los parámetros del formulario
-		Asignatura asignatura = new Asignatura(request.getParameter("id"), request.getParameter("nombre"));
+		Asignatura asignatura = new Asignatura(request.getParameter("idAsignatura"), request.getParameter("nombreAsignatura"));
 		
 		// Reemplazar la asignatura existente con el mismo id de asignatura en el Hashtable
 		asignaturas.replace(asignatura.getIdAsignatura(), asignatura);

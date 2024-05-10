@@ -1,20 +1,21 @@
 <%@ page import="java.util.Hashtable" %>
 <%@ page import="edu.ucam.pojos.Convocatoria" %>
-<%@ page import="edu.ucam.pojos.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <title>CRUD de Convocatorias</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding: 0;
-        line-height: 1.6; /* Para mayor legibilidad */
+        line-height: 1.6;
     }
     
     header {
@@ -216,12 +217,12 @@
         <form action="Control" method="post">
             <input type="hidden" name="idaccion" value="InsertarConvocatoria">
             <div class="input-group">
-                <label for="id">ID:</label>
-      			<input type="text" id="id" name="id" required>
+                <label for="idConvocatoria">ID:</label>
+      			<input type="text" id="idConvocatoria" name="idConvocatoria" required>
             </div>
             <div class="input-group">
-                <label for="nombre">Nombre:</label>
-      			<input type="text" id="nombre" name="nombre" required>
+                <label for="nombreConvocatoria">Nombre:</label>
+      			<input type="text" id="nombreConvocatoria" name="nombreConvocatoria" required>
             </div>
             <button type="submit" class="submit-button">Insertar Convocatoria</button>
         </form>
@@ -246,17 +247,17 @@
             for (Convocatoria convocatoria : convocatorias.values()) {
             %>
             <tr>
-                <td><%= convocatoria.getId() %></td>
-                <td><%= convocatoria.getNombre() %></td>
+                <td><%= convocatoria.getIdConvocatoria() %></td>
+                <td><%= convocatoria.getNombreConvocatoria() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="BorrarConvocatoria">
-                        <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
+                        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="ModConvocatoria">
-                        <input type="hidden" name="id" value="<%= convocatoria.getId() %>">
+                        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>
                 </td>

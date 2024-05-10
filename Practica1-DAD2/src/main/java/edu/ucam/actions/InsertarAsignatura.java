@@ -12,18 +12,18 @@ public class InsertarAsignatura extends Action {
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
 		//Obtener los parámetros del formulario de inserción de asignaturas
-		String id = request.getParameter("id");
-		String nombre = request.getParameter("nombre");
+		String idAsignatura = request.getParameter("idAsignatura");
+		String nombreAsignatura = request.getParameter("nombreAsignatura");
 		
 		// Obtener la Hashtable de asignaturas y verificar si ya existe una asignatura con el mismo id
 		Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
-		Asignatura asignatura = asignaturas.get(id);
+		Asignatura asignatura = asignaturas.get(idAsignatura);
 		
 		// Si no existe una asignatura con el mismo id y los campos del id y nombre no están vacíos
-		if(asignatura == null && !id.isEmpty() && !nombre.isEmpty()) {			 
+		if(asignatura == null && !idAsignatura.isEmpty() && !nombreAsignatura.isEmpty()) {			 
 			// Crear una nueva asignatura y agregarla
-			asignatura = new Asignatura(id, nombre);
-			asignaturas.put(id, asignatura);
+			asignatura = new Asignatura(idAsignatura, nombreAsignatura);
+			asignaturas.put(idAsignatura, asignatura);
 			System.out.println("Asignatura Insertada");
 		}
 		else {
