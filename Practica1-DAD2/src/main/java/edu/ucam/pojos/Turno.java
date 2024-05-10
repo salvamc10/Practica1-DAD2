@@ -4,30 +4,30 @@ import java.util.Hashtable;
 
 public class Turno {
 	
-	private String id;
-	private String nombre;
+	private String idTurno;
+	private String nombreTurno;
 	private Hashtable<String, Asignatura> asignaturas;
 	
-	public Turno(String id, String nombre, Hashtable<String, Asignatura> asignaturas) {
-		this.id = id;
-		this.nombre = nombre;
+	public Turno(String idTurno, String nombreTurno, Hashtable<String, Asignatura> asignaturas) {
+		this.idTurno = idTurno;
+		this.nombreTurno = nombreTurno;
 		this.asignaturas = asignaturas;
 	}
 
-	public String getId() {
-		return id;
+	public String getIdTurno() {
+		return idTurno;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setIdTurno(String idTurno) {
+		this.idTurno = idTurno;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreTurno() {
+		return nombreTurno;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreTurno(String nombreTurno) {
+		this.nombreTurno = nombreTurno;
 	}
 
 	public Hashtable<String, Asignatura> getAsignaturas() {
@@ -38,8 +38,12 @@ public class Turno {
 		this.asignaturas = asignaturas;
 	}
 	
-    public void agregarAsignatura(Asignatura asignatura) {
-        this.asignaturas.put(id, asignatura);
-    }
+	public void addAsignatura(Asignatura asignatura) {
+		this.asignaturas.put(idTurno, asignatura);
+	}
+	
+	public String toString() {
+		return nombreTurno;
+	}
 
 }

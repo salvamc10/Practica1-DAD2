@@ -249,17 +249,17 @@
             for (Asignatura asignatura : asignaturas.values()) {
             %>
             <tr>
-                <td><%= asignatura.getId() %></td>
-                <td><%= asignatura.getNombre() %></td>
+                <td><%= asignatura.getIdAsignatura() %></td>
+                <td><%= asignatura.getNombreAsignatura() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="BorrarAsignatura">
-                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <input type="hidden" name="id" value="<%= asignatura.getIdAsignatura() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="ModAsignatura">
-                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <input type="hidden" name="id" value="<%= asignatura.getIdAsignatura() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>
                 </td>
