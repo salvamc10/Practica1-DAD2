@@ -108,6 +108,12 @@
         		<button type="submit" class="action-button">CRUD de Asignaturas</button>
     		</form>
 		</li>
+		 <li>
+        	<form action="Control" method="post">
+        		<input type="hidden" name="idaccion" value="GestionConvocatorias">
+        		<button type="submit" class="action-button">CRUD de Convocatorias</button>
+    		</form>
+		</li>
     </ul>
 </div>
 

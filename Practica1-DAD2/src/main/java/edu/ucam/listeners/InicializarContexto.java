@@ -39,7 +39,7 @@ public class InicializarContexto implements ServletContextListener {
         users.put("admin", new User("admin", "admin"));    
         users.put("salva", new User("salva", "salva"));
         asignaturas.put("1", new Asignatura("1", "Matematicas"));
-        convocatorias.put("1", new Convocatoria("1", "Matematicas", "Mañana"));
+        convocatorias.put("1", new Convocatoria("1", "Ordinaria"));
         
         // Asignar las Hashtable al contexto del servlet
         sce.getServletContext().setAttribute("users", users);

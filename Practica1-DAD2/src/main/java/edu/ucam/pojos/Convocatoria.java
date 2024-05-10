@@ -3,13 +3,11 @@ package edu.ucam.pojos;
 public class Convocatoria {
 
 	private String id;
-	private String asignatura;
-	private String turno;
+	private String nombre;
 	
-	public Convocatoria(String id, String asignatura, String turno) {
+	public Convocatoria(String id, String nombre) {
 		this.id = id;
-		this.asignatura = asignatura;
-		this.turno = turno;
+		this.nombre = nombre;
 	}
 
 	public String getId() {
@@ -20,20 +18,11 @@ public class Convocatoria {
 		this.id = id;
 	}
 
-	public String getAsignatura() {
-		return asignatura;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setAsignatura(String asignatura) {
-		this.asignatura = asignatura;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-
-	public String getTurno() {
-		return turno;
-	}
-
-	public void setTurno(String turno) {
-		this.turno = turno;
-	}
-
 }

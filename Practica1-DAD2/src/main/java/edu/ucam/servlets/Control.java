@@ -15,8 +15,10 @@ import edu.ucam.actions.BorrarUsuario;
 import edu.ucam.actions.EditarAsignatura;
 import edu.ucam.actions.EditarUsuario;
 import edu.ucam.actions.GestionAsignaturas;
+import edu.ucam.actions.GestionConvocatorias;
 import edu.ucam.actions.GestionUsuarios;
 import edu.ucam.actions.InsertarAsignatura;
+import edu.ucam.actions.InsertarConvocatoria;
 import edu.ucam.actions.InsertarUsuario;
 import edu.ucam.actions.LogOut;
 import edu.ucam.actions.Login;
@@ -59,6 +61,8 @@ public class Control extends HttpServlet {
             actions.put("ModAsignatura", new ModAsignatura());
             actions.put("GestionUsuarios", new GestionUsuarios());
             actions.put("GestionAsignaturas", new GestionAsignaturas());
+            actions.put("InsertarConvocatoria", new InsertarConvocatoria());
+            actions.put("GestionConvocatorias", new GestionConvocatorias());
         }
         
         super.init();
