@@ -225,12 +225,12 @@
         <form action="Control" method="post">
             <input type="hidden" name="idaccion" value="InsertarAsignatura">
             <div class="input-group">
-                <label for="id">ID:</label>
-      			<input type="text" id="id" name="id" required>
+                <label for="idAsignatura">ID:</label>
+      			<input type="text" id="idAsignatura" name="idAsignatura" required>
             </div>
             <div class="input-group">
-                <label for="nombre">Nombre:</label>
-      			<input type="text" id="nombre" name="nombre" required>
+                <label for="nombreAsignatura">Nombre:</label>
+      			<input type="text" id="nombreAsignatura" name="nombreAsignatura" required>
             </div>
             <button type="submit" class="submit-button">Insertar asignatura</button>
         </form>
@@ -255,17 +255,17 @@
             for (Asignatura asignatura : asignaturas.values()) {
             %>
             <tr>
-                <td><%= asignatura.getId() %></td>
-                <td><%= asignatura.getNombre() %></td>
+                <td><%= asignatura.getIdAsignatura() %></td>
+                <td><%= asignatura.getNombreAsignatura() %></td>
                 <td class="action-buttons">
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="BorrarAsignatura">
-                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <input type="hidden" name="idAsignatura" value="<%= asignatura.getIdAsignatura() %>">
                         <button type="submit" class="delete-button">Borrar</button>
                     </form>
                     <form action="Control" method="post">
                         <input type="hidden" name="idaccion" value="ModAsignatura">
-                        <input type="hidden" name="id" value="<%= asignatura.getId() %>">
+                        <input type="hidden" name="idAsignatura" value="<%= asignatura.getIdAsignatura() %>">
                         <button type="submit" class="edit-button">Editar</button>
                     </form>
                 </td>

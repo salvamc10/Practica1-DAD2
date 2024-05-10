@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cambiar nombre</title>
+<title>Cambiar nombre turno</title>
 
 <style>
     body {
@@ -70,13 +70,13 @@
 <body>
 
 <div class="container">
-    <h2>Cambiar nombre de la convocatoria</h2>
+    <h2>Cambiar nombre del turno</h2>
     
     <form action="Control" method="post">
-        <input type="hidden" name="idaccion" value="EditarConvocatoria">
-        <input type="hidden" name="idConvocatoria" value="<%= request.getParameter("idConvocatoria") %>">
-        <label for="nombreConvocatoria">Nuevo nombre de la convocatoria:</label>
-        <input type="text" id="nombreConvocatoria" name="nombreConvocatoria" required>
+        <input type="hidden" name="idaccion" value="EditarTurno">
+        <input type="hidden" name="idTurno" value="<%= request.getParameter("idTurno") %>">
+        <label for="nombreTurno">Nuevo nombre del turno:</label>
+        <input type="text" id="nombreTurno" name="nombreTurno" required>
         <input type="submit" value="Cambiar nombre">
     </form>
 </div>

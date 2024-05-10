@@ -1,30 +1,50 @@
 package edu.ucam.pojos;
 
+import java.util.Hashtable;
+
 public class Convocatoria {
 
-	// Atributos de la clase Convocatoria
-	private String id;
-	private String nombre;
+	private String idConvocatoria;
+	private String nombreConvocatoria;
+	private Hashtable<String, Turno> turnos;
 	
-	public Convocatoria(String id, String nombre) {
-		this.id = id;
-		this.nombre = nombre;
+	public Convocatoria(String idConvocatoria, String nombreConvocatoria) {
+		this.idConvocatoria = idConvocatoria;
+		this.nombreConvocatoria = nombreConvocatoria;
+		this.turnos = new Hashtable<String, Turno>();
 	}
 
-	// Métodos getter y setter
-	public String getId() {
-		return id;
+	public String getIdConvocatoria() {
+		return idConvocatoria;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setIdConvocatoria(String idConvocatoria) {
+		this.idConvocatoria = idConvocatoria;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreConvocatoria() {
+		return nombreConvocatoria;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreConvocatoria(String nombreConvocatoria) {
+		this.nombreConvocatoria = nombreConvocatoria;
 	}
+
+	public Hashtable<String, Turno> getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(Hashtable<String, Turno> turnos) {
+		this.turnos = turnos;
+	}
+	
+	public void addTurno(String idTurno, Turno turno) {
+		
+		this.turnos.put(idTurno, turno);
+	}
+	
+	public String toString() {
+		return nombreConvocatoria;
+	}
+	
 }

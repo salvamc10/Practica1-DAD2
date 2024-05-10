@@ -159,16 +159,12 @@
                 <button type="submit" class="action-button">CRUD de Convocatorias</button>
             </form>
         </li>
-<<<<<<< Updated upstream
-=======
-        
         <li>
             <form action="Control" method="post">
                 <input type="hidden" name="idaccion" value="GestionTurnos">
                 <button type="submit" class="action-button">CRUD de Turnos</button>
             </form>
         </li>
->>>>>>> Stashed changes
     </ul>
 </div>
 

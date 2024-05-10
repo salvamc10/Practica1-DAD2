@@ -2,7 +2,6 @@ package edu.ucam.actions;
 
 import java.util.Hashtable;
 
-import edu.ucam.pojos.Asignatura;
 import edu.ucam.pojos.Convocatoria;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,23 +12,23 @@ public class InsertarConvocatoria extends Action {
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
 		//Obtener los parámetros del formulario de inserción de convocatorias
-		String id = request.getParameter("id");
-		String nombre = request.getParameter("nombre");
+		String idConvocatoria = request.getParameter("idConvocatoria");
+		String nombreConvocatoria = request.getParameter("nombreConvocatoria");
 		
 		// Obtener la Hashtable de convocatorias del contexto del servlet
 		Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias");
 		
 		// Verificar si ya existe una convocatoria con el mismo id
-		Convocatoria convocatoria = convocatorias.get(id);
+		Convocatoria convocatoria = convocatorias.get(idConvocatoria);
 		
 		// Si no existe una convocatoria con el mismo id y los campos del id y nombre no están vacíos
-		if(convocatoria == null && !id.isEmpty() && !nombre.isEmpty()) {
+		if(convocatoria == null && !idConvocatoria.isEmpty() && !nombreConvocatoria.isEmpty()) {
 			 
 			// Crear una nueva convocatoria con los datos proporcionados
-			convocatoria = new Convocatoria(id, nombre);
+			convocatoria = new Convocatoria(idConvocatoria, nombreConvocatoria);
 			
 			// Agregar la nueva convocatoria a la Hashtable
-			convocatorias.put(id, convocatoria);
+			convocatorias.put(idConvocatoria, convocatoria);
 			
 			// Imprimir un mensaje en la consola indicando que la convocatoria ha sido insertada
 			System.out.println("Convocatoria Insertada");

@@ -70,13 +70,13 @@
 <body>
 
 <div class="container">
-    <h2>Cambiar nombre</h2>
+    <h2>Cambiar nombre de la asignatura</h2>
     
     <form action="Control" method="post">
         <input type="hidden" name="idaccion" value="EditarAsignatura">
-        <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
-        <label for="nombre">Nuevo Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="hidden" name="idAsignatura" value="<%= request.getParameter("idAsignatura") %>">
+        <label for="nombre">Nuevo nombre de la asignatura:</label>
+        <input type="text" id="nombreAsignatura" name="nombreAsignatura" required>
         <input type="submit" value="Cambiar nombre">
     </form>
 </div>
