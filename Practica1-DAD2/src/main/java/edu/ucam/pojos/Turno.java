@@ -8,10 +8,10 @@ public class Turno {
 	private String nombreTurno;
 	private Hashtable<String, Asignatura> asignaturas;
 	
-	public Turno(String idTurno, String nombreTurno, Hashtable<String, Asignatura> asignaturas) {
+	public Turno(String idTurno, String nombreTurno) {
 		this.idTurno = idTurno;
 		this.nombreTurno = nombreTurno;
-		this.asignaturas = asignaturas;
+		this.asignaturas = new Hashtable<String, Asignatura>();
 	}
 
 	public String getIdTurno() {
@@ -38,12 +38,11 @@ public class Turno {
 		this.asignaturas = asignaturas;
 	}
 	
-	public void addAsignatura(Asignatura asignatura) {
-		this.asignaturas.put(idTurno, asignatura);
+	public void addAsignatura(String idAsignatura, Asignatura asignatura) {
+		this.asignaturas.put(idAsignatura, asignatura);
 	}
 	
 	public String toString() {
 		return nombreTurno;
 	}
-
 }

@@ -33,23 +33,22 @@ public class InicializarContexto implements ServletContextListener {
         
         // Creamos las Hashtable para cada CRUD
         Hashtable<String, User> users = new Hashtable<String, User>(); 
-        Hashtable<String, Convocatoria> convocatorias = new Hashtable<String, Convocatoria>();
-        Hashtable<String, Asignatura> asignaturas = new Hashtable<String, Asignatura>();   
+        Hashtable<String, Convocatoria> convocatorias = new Hashtable<String, Convocatoria>(); 
         Hashtable<String, Turno> turnos = new Hashtable<String, Turno>();
+        Hashtable<String, Asignatura> asignaturas = new Hashtable<String, Asignatura>();
         
         // Añadirmos 2 usuarios, 1 asignatura, 1 convocatoria
         users.put("admin", new User("admin", "admin"));    
         users.put("salva", new User("salva", "salva"));
         convocatorias.put("1", new Convocatoria("1", "Ordinaria"));
+        turnos.put("1", new Turno("1", "Mañana"));
         asignaturas.put("1", new Asignatura("1", "Matematicas"));
-        turnos.put("1", new Turno("1", "Mañana", asignaturas));
         
         // Asignar las Hashtable al contexto del servlet
         sce.getServletContext().setAttribute("users", users);
-        sce.getServletContext().setAttribute("asignaturas", asignaturas);
         sce.getServletContext().setAttribute("convocatorias", convocatorias);
         sce.getServletContext().setAttribute("turnos", turnos);
-    	
+        sce.getServletContext().setAttribute("asignaturas", asignaturas);
     }
 
 	/**
