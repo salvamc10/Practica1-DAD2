@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import edu.ucam.pojos.User;
 import edu.ucam.pojos.Asignatura;
 import edu.ucam.pojos.Convocatoria;
+import edu.ucam.pojos.Turno;
 import edu.ucam.servlets.Control;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -31,20 +32,23 @@ public class InicializarContexto implements ServletContextListener {
         System.out.println("Inicializando el contexto....");
         
         // Creamos las Hashtable para cada CRUD
-        Hashtable<String, User> users = new Hashtable<String, User>();       
-        Hashtable<String, Asignatura> asignaturas = new Hashtable<String, Asignatura>();   
+        Hashtable<String, User> users = new Hashtable<String, User>(); 
         Hashtable<String, Convocatoria> convocatorias = new Hashtable<String, Convocatoria>();
+        Hashtable<String, Asignatura> asignaturas = new Hashtable<String, Asignatura>();   
+        Hashtable<String, Turno> turnos = new Hashtable<String, Turno>();
         
         // Añadirmos 2 usuarios, 1 asignatura, 1 convocatoria
         users.put("admin", new User("admin", "admin"));    
         users.put("salva", new User("salva", "salva"));
-        asignaturas.put("1", new Asignatura("1", "Matematicas"));
         convocatorias.put("1", new Convocatoria("1", "Ordinaria"));
+        asignaturas.put("1", new Asignatura("1", "Matematicas"));
+        turnos.put("1", new Turno("1", "Mañana", asignaturas));
         
         // Asignar las Hashtable al contexto del servlet
         sce.getServletContext().setAttribute("users", users);
         sce.getServletContext().setAttribute("asignaturas", asignaturas);
         sce.getServletContext().setAttribute("convocatorias", convocatorias);
+        sce.getServletContext().setAttribute("turnos", turnos);
     	
     }
 
