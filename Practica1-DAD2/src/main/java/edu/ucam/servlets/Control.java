@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import edu.ucam.actions.Action;
+import edu.ucam.actions.AsignaturaAddTurno;
 import edu.ucam.actions.BorrarAsignatura;
 import edu.ucam.actions.BorrarConvocatoria;
 import edu.ucam.actions.BorrarTurno;
@@ -80,6 +81,7 @@ public class Control extends HttpServlet {
             actions.put("GestionTurnos", new GestionTurnos());
             actions.put("ModTurno", new ModTurno());
             actions.put("EditarTurno", new EditarTurno());
+            actions.put("AsignaturaAddTurno", new AsignaturaAddTurno());
         }
         
         super.init();
