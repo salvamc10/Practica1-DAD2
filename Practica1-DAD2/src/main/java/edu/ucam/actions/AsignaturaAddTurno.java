@@ -25,12 +25,10 @@ public class AsignaturaAddTurno extends Action {
 		//comprobamos que la asignatura existe
 		if(asignaturas.containsKey(idAsignatura)) {
 			asignatura = asignaturas.get(idAsignatura);
-			System.out.println("La Asignatura " + asignatura.getIdAsignatura() + " " + asignatura.getNombreAsignatura() + " Existe.");
 			
 			//Comprobamos que el turno existe
 			if((idTurno!= null) && (turnos.containsKey(idTurno))) {
 				Turno turno = turnos.get(idTurno);
-				System.out.println("El Turno " + turno.getIdTurno() + " " + turno.getNombreTurno() + " Existe.");
 				
 				//Comprobamos que la asignatura no pertenece a ningun turno
 				if(!asignatura.isPerteneceTurno()) {
