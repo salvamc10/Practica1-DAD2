@@ -10,41 +10,33 @@
 <title>Asignar un turno</title>
 </head>
 <body>
-	<h1>Asignar un turno a una convocatoria</h1>
-	<form action="Control">
-		<input type="hidden" name="idaccion" VALUE="TurnoAddConvocatoria">
-		Id Turno	<input type="text" name="idTurno"><br>
-		Id Convocatoria	<input type="text" name="idConvocatoria"><br>
-		<input type ="submit" value="Añadir Turno">
-	</form>
+    <h1>Asignar un turno a una convocatoria</h1>
+    <form action="Control">
+        <input type="hidden" name="idaccion" VALUE="TurnoAddConvocatoria">
+        Id Turno    <input type="text" name="idTurno"><br>
+        Id Convocatoria    <input type="text" name="idConvocatoria"><br>
+        <input type ="submit" value="Añadir Turno">
+    </form>
 
-	<%
-		Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias"); 
-		Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos");
+    <%
+        Hashtable<String, Convocatoria> convocatorias = (Hashtable<String, Convocatoria>) request.getServletContext().getAttribute("convocatorias"); 
+        Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos");
 
-	%>
-	<table>
-  		<thead>
-    		<tr>
-      			<th> 
-      				<h2>Convocatorias</h2>
-      				<%
-      					for(Convocatoria convocatoria : convocatorias.values()){
-      						out.println(convocatoria.getIdConvocatoria());%><br><%
-      					}
-      				%>
-	  			</th>
-      			<th>
-      				<h2>Turnos</h2>
-      				<%
-      					for(Turno turno : turnos.values()){
-      						out.println(turno.getIdTurno());%><br><%
-      					}
-      		
-      				%>
-      			</th>
-     		</tr>
-    	</thead>
-	</table>
+        for (Convocatoria convocatoria : convocatorias.values()) {
+    %>
+    <h2>Convocatoria: <%= convocatoria.getIdConvocatoria() %></h2>
+    <ul>
+        <% 
+            for (String idTurnoAsignado : convocatoria.getTurnos().keySet()) {
+                Turno turnoAsignado = convocatoria.getTurnos().get(idTurnoAsignado);
+        %>
+        <li>Turno asignado: <%= turnoAsignado.getIdTurno() %></li>
+        <% 
+            }
+        %>
+    </ul>
+    <% 
+        }
+    %>
 </body>
 </html>
