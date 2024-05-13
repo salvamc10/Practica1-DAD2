@@ -8,6 +8,10 @@ public class Convocatoria {
 	private String nombreConvocatoria;
 	private Hashtable<String, Turno> turnos;
 	
+	public Convocatoria() {
+
+	}
+	
 	public Convocatoria(String idConvocatoria, String nombreConvocatoria) {
 		this.idConvocatoria = idConvocatoria;
 		this.nombreConvocatoria = nombreConvocatoria;
@@ -38,7 +42,7 @@ public class Convocatoria {
 		this.turnos = turnos;
 	}
 	
-	public void addTurno(String idTurno, Turno turno) {
+	public void addTurnoToConvocatoria(String idTurno, Turno turno) {
 		
 		this.turnos.put(idTurno, turno);
 	}

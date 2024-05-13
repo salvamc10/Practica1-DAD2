@@ -250,17 +250,28 @@
                 <td><%= convocatoria.getIdConvocatoria() %></td>
                 <td><%= convocatoria.getNombreConvocatoria() %></td>
                 <td class="action-buttons">
-                    <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="BorrarConvocatoria">
-                        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
-                        <button type="submit" class="delete-button">Borrar</button>
-                    </form>
-                    <form action="Control" method="post">
-                        <input type="hidden" name="idaccion" value="ModConvocatoria">
-                        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
-                        <button type="submit" class="edit-button">Editar</button>
-                    </form>
-                </td>
+    <!-- Botón para borrar la convocatoria -->
+    <form action="Control" method="post">
+        <input type="hidden" name="idaccion" value="BorrarConvocatoria">
+        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
+        <button type="submit" class="delete-button">Borrar</button>
+    </form>
+    
+    <!-- Botón para editar la convocatoria -->
+    <form action="Control" method="post">
+        <input type="hidden" name="idaccion" value="ModConvocatoria">
+        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
+        <button type="submit" class="edit-button">Editar</button>
+    </form>
+    
+    <!-- Botón para añadir un turno a la convocatoria -->
+    <form action="Control" method="post">
+        <input type="hidden" name="idaccion" value="TurnoAddConvocatoria">
+        <input type="hidden" name="idConvocatoria" value="<%= convocatoria.getIdConvocatoria() %>">
+        <button type="submit" class="add-button">Añadir Turno</button>
+    </form>
+</td>
+
             </tr>
             <% 
             }

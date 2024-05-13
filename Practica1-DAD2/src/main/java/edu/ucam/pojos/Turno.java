@@ -6,7 +6,12 @@ public class Turno {
 	
 	private String idTurno;
 	private String nombreTurno;
+	private String idConvocatoria;
 	private Hashtable<String, Asignatura> asignaturas;
+	
+	public Turno() {
+
+	}
 	
 	public Turno(String idTurno, String nombreTurno) {
 		this.idTurno = idTurno;
@@ -32,6 +37,14 @@ public class Turno {
 
 	public Hashtable<String, Asignatura> getAsignaturas() {
 		return asignaturas;
+	}
+
+	public String getIdConvocatoria() {
+		return idConvocatoria;
+	}
+
+	public void setIdConvocatoria(String idConvocatoria) {
+		this.idConvocatoria = idConvocatoria;
 	}
 
 	public void setAsignaturas(Hashtable<String, Asignatura> asignaturas) {
