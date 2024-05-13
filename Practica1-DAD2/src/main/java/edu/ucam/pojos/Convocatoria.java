@@ -46,5 +46,4 @@ public class Convocatoria {
 	public String toString() {
 		return nombreConvocatoria;
 	}
-	
 }
