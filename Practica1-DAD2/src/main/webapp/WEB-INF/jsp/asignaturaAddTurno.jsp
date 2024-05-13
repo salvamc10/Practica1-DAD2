@@ -6,51 +6,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insertar Asignatura en un Turno</title>
-
-
+    <meta charset="ISO-8859-1">
+    <title>Insertar Asignatura en un Turno</title>
+    <link rel="stylesheet" href="css/estilos.css"/>
 </head>
 <body>
+<header>
+    Bienvenido
+    <nav>
+        <ul>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionAsignaturas">
+                    <button type="submit">Asignaturas</button>
+                </form>
+            </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionConvocatorias">
+                    <button type="submit">Convocatorias</button>
+                </form>
+            </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionTurnos">
+                    <button type="submit">Turnos</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <form action="Control" method="post">
+        <input type="hidden" name="idaccion" value="Logout">
+        <button type="submit" class="logout-button">Cerrar sesión</button>
+    </form>
+</header>
 
-<h1>Insertar Asignatura a Turno</h1>
+<div class="content">
+    <h1>Insertar Asignatura a Turno</h1>
+    <br>
+    <div class="form-section">
+        <form action="Control">
+            <input type="hidden" name="idaccion" value="AsignaturaAddTurno">
+            <div class="input-group">
+                <label for="idAsignatura">Asignatura:</label>
+                <input type="text" name="idAsignatura">
+            </div>
+            <div class="input-group">
+                <label for="idTurno">Turno:</label>
+                <input type="text" name="idTurno">
+            </div>
+            <button type="submit" class="submit-button">Añadir Asignatura a Turno</button>
+        </form>
+    </div>
+	<%
+        Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos");
+		Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
 
-<br>
-<form action="Control">
-<input type="hidden" name="idaccion" value="AsignaturaAddTurno">
-Asignatura <input type="text" name="idAsignatura"><br>
-Turno <input type="text" name="idTurno"><br>
-<input type ="submit" value="Añadir Asignatura a Turno">
-</form>
-
-<%
-	Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos"); 
-	Hashtable<String, Asignatura> asignaturas = (Hashtable<String, Asignatura>) request.getServletContext().getAttribute("asignaturas");
-
-%>
-
-<table>
-  <thead>
-    <tr>
-      <th> 
-      		<h2>Turnos</h2>
-      		<%
-      			for(Turno turno : turnos.values()){
-      				out.println(turno.getIdTurno());%><br><%
-      			}
-      		%>
-	  </th>
-      <th>
-      		<h2>Asignaturas</h2>
-      		<%
-      			for(Asignatura asignatura : asignaturas.values()){
-      				out.println(asignatura.getIdAsignatura());%><br><%
-      			}
-      		%>
-      </th>
-     </tr>
-    </thead>
-</table>
-
+        for (Turno turno : turnos.values()) {
+    %>
+    <h2>Turno: <%= turno.getNombreTurno() %></h2>
+    <ul>
+        <% 
+            for (String idAsignaturaAsignada : turno.getAsignaturas().keySet() ) {
+                Asignatura asignaturaAsignada = turno.getAsignaturas().get(idAsignaturaAsignada);
+        %>
+        <li>Asignatura asignada: <%= asignaturaAsignada.getNombreAsignatura() %></li>
+        <% 
+            }
+        %>
+    </ul>
+    <% 
+        }
+    %>
+    
+</div>
 </body>
 </html>
