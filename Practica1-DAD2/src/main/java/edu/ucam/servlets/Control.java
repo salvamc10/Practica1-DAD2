@@ -34,6 +34,7 @@ import edu.ucam.actions.ModAsignatura;
 import edu.ucam.actions.ModConvocatoria;
 import edu.ucam.actions.ModTurno;
 import edu.ucam.actions.ModUser;
+import edu.ucam.actions.TurnoAddConvocatoria;
 import edu.ucam.pojos.User;
 
 /**
@@ -81,6 +82,7 @@ public class Control extends HttpServlet {
             actions.put("GestionTurnos", new GestionTurnos());
             actions.put("ModTurno", new ModTurno());
             actions.put("EditarTurno", new EditarTurno());
+            actions.put("TurnoAddConvocatoria", new TurnoAddConvocatoria());
             actions.put("AsignaturaAddTurno", new AsignaturaAddTurno());
         }
         
@@ -98,7 +100,7 @@ public class Control extends HttpServlet {
         if (idaccion == null){
         	
         	// Redirigir a la página del login
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 		} else{
 		
 			// Obtener la acción correspondiente, ejecutar la acción y obtener la URL de la página resultante
