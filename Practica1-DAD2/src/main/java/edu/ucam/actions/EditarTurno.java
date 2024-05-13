@@ -11,19 +11,16 @@ public class EditarTurno extends Action {
 	@Override
 	public String doAction(HttpServletRequest request, HttpServletResponse response) {
 		
-		// Verificar si el atributo "turnos" está presente en el contexto del servlet
+		// Verificar si el atributo "turnos" está presente
 		if(request.getServletContext().getAttribute("turnos") == null) {
-			// Si no está presente, crear un nuevo Hashtable y establecerla como atributo del contexto del servlet
 			request.getServletContext().setAttribute("turnos", new Hashtable<String, Turno>());
 		}
 		
-		// Obtener el Hashtable de turnos del contexto del servlet
+		// Obtener el Hashtable de turnos y crear un nuevo objeto Turno
 		Hashtable<String, Turno> turnos = (Hashtable<String, Turno>) request.getServletContext().getAttribute("turnos");
-				
-		// Crear un nuevo objeto Turno utilizando los parámetros del formulario
 		Turno turno = new Turno(request.getParameter("idTurno"), request.getParameter("nombreTurno"));
 				
-		// Reemplazar la asignatura existente con el mismo id de turno en el Hashtable
+		// Reemplazar el turno existente con el mismo id de turno en el Hashtable
 		turnos.replace(turno.getIdTurno(), turno);
 				
 		// Volvemos a la jsp de turnos

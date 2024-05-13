@@ -202,6 +202,12 @@
                     <button type="submit">Convocatorias</button>
                 </form>
             </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionTurnos">
+                    <button type="submit">Turnos</button>
+                </form>
+            </li>
         </ul>
     </nav>
     <form action="Control" method="post">
@@ -261,6 +267,11 @@
                         <input type="hidden" name="idaccion" value="ModTurno">
                         <input type="hidden" name="idTurno" value="<%= turno.getIdTurno() %>">
                         <button type="submit" class="edit-button">Editar</button>
+                    </form>
+                    <form action="Control" method="post">
+                        <input type="hidden" name="idaccion" value="AsignaturaAddTurno">
+                        <input type="hidden" name="idTurno" value="<%= turno.getIdTurno() %>">
+                        <button type="submit" class="edit-button">Añadir Asignatura</button>
                     </form>
                 </td>
             </tr>

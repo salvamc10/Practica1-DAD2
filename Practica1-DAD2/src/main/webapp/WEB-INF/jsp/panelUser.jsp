@@ -129,6 +129,12 @@
                     <button type="submit">Convocatorias</button>
                 </form>
             </li>
+            <li>
+                <form action="Control" method="post">
+                    <input type="hidden" name="idaccion" value="GestionTurnos">
+                    <button type="submit">Turnos</button>
+                </form>
+            </li>
         </ul>
     </nav>
     <form action="Control" method="post">
@@ -153,10 +159,9 @@
                 <button type="submit" class="action-button">CRUD de Convocatorias</button>
             </form>
         </li>
-        
         <li>
             <form action="Control" method="post">
-                <input type="hidden" name="idaccion" value="GestionTurno">
+                <input type="hidden" name="idaccion" value="GestionTurnos">
                 <button type="submit" class="action-button">CRUD de Turnos</button>
             </form>
         </li>
