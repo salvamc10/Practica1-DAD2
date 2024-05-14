@@ -323,3 +323,15 @@ tr:hover {
 .editar-form input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+.admin-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.admin-section h2 {
+    text-align: center;
+    color: #333;
+}
