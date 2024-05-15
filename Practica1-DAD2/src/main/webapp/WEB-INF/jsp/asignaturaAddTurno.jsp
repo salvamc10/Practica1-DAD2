@@ -42,18 +42,17 @@
 </header>
 
 <div class="content">
-    <h1>Insertar Asignatura a Turno</h1>
-    <br>
-    <div class="form-section">
-        <form action="Control">
+    <div class="form-sectio|n">
+    	<h1>Insertar Asignatura a Turno</h1>
+        <form action="Control" method="post">
             <input type="hidden" name="idaccion" value="AsignaturaAddTurno">
             <div class="input-group">
                 <label for="idAsignatura">Asignatura:</label>
-                <input type="text" name="idAsignatura">
+                <input type="text" id="idAsignatura" name="idAsignatura">
             </div>
             <div class="input-group">
                 <label for="idTurno">Turno:</label>
-                <input type="text" name="idTurno">
+                <input type="text" id="idTurno" name="idTurno">
             </div>
             <button type="submit" class="submit-button">Añadir Asignatura a Turno</button>
         </form>
